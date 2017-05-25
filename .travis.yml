@@ -1,0 +1,53 @@
+language: php
+
+sudo: false
+
+env:
+  global:
+    - secure: "OC6EEdRP4hU5FSMf7e02T9dAVfRKPhaeRpinfzXfLvLgq4b4NTIYapMA9KU9AuZSsVJPBMmkX0u5kpzS5feLxh055EjRveLsS4CfdCTHwrnqclmduboYF5wzOozLTH+5KxOAsCMhu3j7NXuRyeDZUdc5dUQXLCOwkkpWDW3iF8uBgAb2Vv4zx0yO27MFC4Q5K5ybE5i6nc+rel+66U7quN6cOzD4p0X8PC/K0EFSkMZfidrgyt0aoOQqVjnbC5DML4w+0DSPlLWx/wy0kNiWdUD79lXL6XUoc7vwKP9mISUGhfHXZulBnBp2y9CG8qyBO9ivKyJF/HlHQ3KlnwMtHlt2Zm7aE8XBIzlm7NgfR4pi89m0I7aJKvJKuNj0C20V+Zqcs+K05sFXGWUp/ltTgiboHH9V4ReihN0nivGLGqNBo+CBblzfmZG3Ij5ZwOHcAhg9ekV0OtS+lusdyZKFePj2J7neUH0k5Uh+Qbapl6SS/F91AQuVFNsrSwOLydO2cDFI2dsJKQSRdQKh7Jp00ndX2ElH6ptDiQqqDj/DSczu8nv3R3xF9Kmjel+1GZf7pH20s4B/Xmt3I1cnwwpbPIer6XxRm6RvH8FqMB7ZBqVpdy+h8EmQ/aSYHeiDVx6fHkmz40OBTe5UTsH2C02nXTwic3VkpeokMBnNaLUalug="
+    - secure: "KMW6WWvWpzTi+hbmFBr+0jJK9I5q9rPbyjWVgCpGVQKm2OpQem4mq/38HLmYylfyIQlwQbQOrvOW1yPxNzJ4/H9IP42J7tgyrWKytra4cJNjVVb3ExOPY2VhgMYRvzDeEbjz1nOSZCWs/fftul5P10w0tL2I5uLemlTnZxDXQItS53cPHyHFDqANvaQhLLSZ++l5+z9jtcbdKEqXi55dsUS8CEuywFCcVnedreaCnofLpbND3Q5i3zOBGctElAv0ljkHUOmbJPCMncuUwK5sBDYROg9W4CSBMCRxH2nRuypWVR89kW0PeH+fLHmK7HnrfC1GGmgHkb57F2kLsvWGhuEf9JFRwiWAVmL+lj9uqaHXSf38LmhgeutkD9SLwQ/kp+rpdQ5MzIHSH1is3t+uuTZCkOoAyHtXqpywqeLl9TONbXYq2sHxlP5p2755AVyxk2YSHjkMDb4V6bIgalBAXg6Z/BttJIYAaTitp3r4Bs808n7rjXJdDA9IX7tBpdObKVKlnFG12bgYEF/G2OB0a1bIxnhIgdl8RMx7DAlzajbDmuTOnt6sYd6KC804E6+8gWCs8cpcYafRAInoByo7EQlk70hqQuJdiAhUTgxSH5tZb33Sn1KP4gQzPFvIoA35e6GR4GxrdDWP8/hSNbVOwSoZjOO0z5AGovsa53tD2jc="
+
+matrix:
+  include:
+    - php: 5.6
+      env: WITH_LOWEST=true
+    - php: 5.6
+      env: WITH_HIGHEST=true WITH_CS=true
+    - php: 7.0
+      env: WITH_LOWEST=true
+    - php: 7.0
+      env: WITH_HIGHEST=true
+    - php: 7.1
+      env: WITH_LOWEST=true
+    - php: 7.1
+      env: WITH_HIGHEST=true WITH_COVERAGE=true
+
+cache:
+  directories:
+    - $HOME/.composer/cache
+    - $HOME/.php-cs-fixer
+
+before_install:
+  - source .travis/xdebug.sh
+  - xdebug-disable
+  - composer validate
+  - composer config github-oauth.github.com $GITHUB_TOKEN
+
+install:
+  - if [[ "$WITH_LOWEST" == "true" ]]; then composer update --prefer-lowest; else composer install; fi
+
+before_script:
+  - mkdir -p "$HOME/.php-cs-fixer"
+  - mkdir -p build/logs
+
+script:
+  - if [[ "$WITH_CS" == "true" ]]; then vendor/bin/php-cs-fixer fix --config=.php_cs --diff --dry-run --verbose; fi
+  - if [[ "$WITH_COVERAGE" == "true" ]]; then xdebug-enable; fi
+  - if [[ "$WITH_COVERAGE" == "true" ]]; then vendor/bin/phpunit --configuration=test/Unit/phpunit.xml --coverage-clover=build/logs/clover.xml; else vendor/bin/phpunit --configuration=test/Unit/phpunit.xml; fi
+  - if [[ "$WITH_COVERAGE" == "true" ]]; then xdebug-disable; fi
+
+after_success:
+  - if [[ "$WITH_COVERAGE" == "true" ]]; then vendor/bin/test-reporter --coverage-report=build/logs/clover.xml; fi
+
+notifications:
+  email: false

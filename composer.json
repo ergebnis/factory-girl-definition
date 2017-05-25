@@ -1,0 +1,34 @@
+{
+  "name": "localheinz/factory-girl-definition",
+  "description": "Provides an interface and a finder for definitions with breerly/factory-girl-php.",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Andreas Möller",
+      "email": "am@localheinz.com"
+    }
+  ],
+  "config": {
+    "preferred-install": "dist",
+    "sort-packages": true
+  },
+  "require": {
+    "php": "^5.6 || ^7.0"
+  },
+  "require-dev": {
+    "codeclimate/php-test-reporter": "0.4.4",
+    "localheinz/php-cs-fixer-config": "1.2.1",
+    "phpunit/phpunit": "^5.7.20"
+  },
+  "autoload": {
+    "psr-4": {
+      "Localheinz\\FactoryGirl\\Definition\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Localheinz\\FactoryGirl\\Definition\\Test\\": "test"
+    }
+  }
+}
