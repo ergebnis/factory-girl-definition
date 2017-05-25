@@ -7,6 +7,8 @@
 [![Latest Stable Version](https://poser.pugx.org/localheinz/factory-girl-definition/v/stable)](https://packagist.org/packages/localheinz/factory-girl-definition)
 [![Total Downloads](https://poser.pugx.org/localheinz/factory-girl-definition/downloads)](https://packagist.org/packages/localheinz/factory-girl-definition)
 
+Provides an interface for, and an easy way to find and register entity definitions for [`breerly/factory-girl-php`](https://github.com/breerly/factory-girl-php).
+
 ## Installation
 
 Run
@@ -17,7 +19,77 @@ $ composer require localheinz/factory-girl-definition
 
 ## Usage
 
-:bulb: This is a great place for showing a few usage examples!
+### Create Definitions
+
+Implement the `Definition` interface and use the instance of `FactoryGirl\Provider\Doctrine\FixtureFactory` 
+that is passed in into `accept()` to define entities:
+
+```php
+<?php
+
+namespace Foo\Bar\Test\Fixture\Entity;
+
+use FactoryGirl\Provider\Doctrine\FixtureFactory;
+use Foo\Bar\Entity;
+use Localheinz\FactoryGirl\Definition\Definition;
+
+final class UserProvider implements Definition
+{
+    public function accept(FixtureFactory $fixtureFactory)
+    {
+        $fixtureFactory->defineEntity(Entity\User::class, [
+            // ...
+        ]);
+    }
+}
+```
+
+:bulb: Any number of entities can be defined within a definition.
+However, it's probably a good idea to create a definition for each entity. 
+ 
+### Register Definitions
+
+Lazily instantiate an instance of `FactoryGirl\Provider\Doctrine\FixtureFactory` 
+and use `Definitions` to find definitions and register them with the factory:
+ 
+```php
+<?php
+
+namespace Foo\Bar\Test\Integration;
+
+use Doctrine\ORM;
+use FactoryGirl\Provider\Doctrine\FixtureFactory;
+use Localheinz\FactoryGirl\Definition\Definitions;
+use PHPUnit\Framework;
+
+abstract class AbstractIntegrationTestCase extends Framework\TestCase
+{
+    /**
+     * @return ORM\EntityManager
+     */
+    final protected function entityManager()
+    {
+        // ...
+    }
+    
+    /**
+     * @return FixtureFactory
+     */
+    final protected function fixtureFactory()
+    {
+        static $fixtureFactory = null;
+        
+        if (null === $fixtureFactory) {
+            $fixtureFactory = new Doctrine\FixtureFactory($entityManager);
+            $fixtureFactory->persistOnGet(true);
+            
+            Definitions::in(__DIR__ . '/../Fixture')->registerWith($fixtureFactory);
+        }
+        
+        return $fixtureFactory;
+    }
+}
+```
 
 ## Contributing
 
