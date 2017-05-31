@@ -33,7 +33,7 @@ use FactoryGirl\Provider\Doctrine\FixtureFactory;
 use Foo\Bar\Entity;
 use Localheinz\FactoryGirl\Definition\Definition;
 
-final class UserProvider implements Definition
+final class UserDefinition implements Definition
 {
     public function accept(FixtureFactory $fixtureFactory)
     {
