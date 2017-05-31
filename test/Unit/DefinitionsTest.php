@@ -73,6 +73,17 @@ final class DefinitionsTest extends Framework\TestCase
         Definitions::in(__DIR__ . '/Asset/Definition/IsAbstract')->registerWith($fixtureFactory);
     }
 
+    public function testInIgnoresClassesWhichHavePrivateConstructors()
+    {
+        $fixtureFactory = $this->createFixtureFactoryMock();
+
+        $fixtureFactory
+            ->expects($this->never())
+            ->method($this->anything());
+
+        Definitions::in(__DIR__ . '/Asset/Definition/PrivateConstructor')->registerWith($fixtureFactory);
+    }
+
     public function testInAcceptsClassesWhichAreAcceptable()
     {
         $fixtureFactory = $this->createFixtureFactoryMock();
