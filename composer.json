@@ -13,8 +13,6 @@
     "preferred-install": "dist",
     "sort-packages": true
   },
-  "minimum-stability": "beta",
-  "prefer-stable": true,
   "require": {
     "php": "^5.6 || ^7.0",
     "zendframework/zend-file": "^2.7.1"
