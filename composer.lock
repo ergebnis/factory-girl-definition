@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "56d6eaa2066ae5fca46ec67c9989ca46",
+    "content-hash": "3b35fd7c14a1eecdf4bc94e87d044018",
     "packages": [
         {
             "name": "zendframework/zend-file",
@@ -942,16 +942,16 @@
         },
         {
             "name": "friendsofphp/php-cs-fixer",
-            "version": "v2.5.1",
+            "version": "v2.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfPHP/PHP-CS-Fixer.git",
-                "reference": "5ab1424fc372a97ee37e521239896b693cb5dd6c"
+                "reference": "5642a36a60c11cdd01488d192541a89bb44a4abf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfPHP/PHP-CS-Fixer/zipball/5ab1424fc372a97ee37e521239896b693cb5dd6c",
-                "reference": "5ab1424fc372a97ee37e521239896b693cb5dd6c",
+                "url": "https://api.github.com/repos/FriendsOfPHP/PHP-CS-Fixer/zipball/5642a36a60c11cdd01488d192541a89bb44a4abf",
+                "reference": "5642a36a60c11cdd01488d192541a89bb44a4abf",
                 "shasum": ""
             },
             "require": {
@@ -991,6 +991,11 @@
                 "php-cs-fixer"
             ],
             "type": "application",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.6-dev"
+                }
+            },
             "autoload": {
                 "psr-4": {
                     "PhpCsFixer\\": "src/"
@@ -1018,7 +1023,7 @@
                 }
             ],
             "description": "A tool to automatically fix PHP code style",
-            "time": "2017-09-11T14:37:41+00:00"
+            "time": "2017-09-11T15:23:20+00:00"
         },
         {
             "name": "fzaninotto/faker",
@@ -1209,20 +1214,20 @@
         },
         {
             "name": "localheinz/php-cs-fixer-config",
-            "version": "1.4.0",
+            "version": "1.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/localheinz/php-cs-fixer-config.git",
-                "reference": "d8372089646a6b7ebfe1dff5fb25b3133dbaee24"
+                "reference": "5846953cccd21e2b5e6e9a4dadb7daeeeb99c76f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/localheinz/php-cs-fixer-config/zipball/d8372089646a6b7ebfe1dff5fb25b3133dbaee24",
-                "reference": "d8372089646a6b7ebfe1dff5fb25b3133dbaee24",
+                "url": "https://api.github.com/repos/localheinz/php-cs-fixer-config/zipball/5846953cccd21e2b5e6e9a4dadb7daeeeb99c76f",
+                "reference": "5846953cccd21e2b5e6e9a4dadb7daeeeb99c76f",
                 "shasum": ""
             },
             "require": {
-                "friendsofphp/php-cs-fixer": "~2.5.0",
+                "friendsofphp/php-cs-fixer": "~2.6.0",
                 "php": "^5.6 || ^7.0"
             },
             "require-dev": {
@@ -1246,7 +1251,7 @@
                 }
             ],
             "description": "Provides a configuration factory and multiple rule sets for friendsofphp/php-cs-fixer.",
-            "time": "2017-08-28T12:12:50+00:00"
+            "time": "2017-09-12T21:30:57+00:00"
         },
         {
             "name": "myclabs/deep-copy",

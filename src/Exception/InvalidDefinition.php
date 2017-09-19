@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * Copyright (c) 2017 Andreas Möller.
  *
@@ -20,7 +22,7 @@ final class InvalidDefinition extends \RuntimeException
                 'An exception was thrown while trying to instantiate definition "%s".',
                 $className
             ),
-            null,
+            0,
             $exception
         );
     }
