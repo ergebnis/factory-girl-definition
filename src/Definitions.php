@@ -28,6 +28,8 @@ final class Definitions
     }
 
     /**
+     * Creates a new instance of this class, and collects all definitions found in the specified directory.
+     *
      * @param string $directory
      *
      * @throws Exception\InvalidDirectory
@@ -76,6 +78,11 @@ final class Definitions
         return $instance;
     }
 
+    /**
+     * Registers all found definitions with the specified fixture factory.
+     *
+     * @param FixtureFactory $fixtureFactory
+     */
     public function registerWith(FixtureFactory $fixtureFactory)
     {
         foreach ($this->definitions as $definition) {
