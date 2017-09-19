@@ -25,7 +25,7 @@ final class DefinitionsTest extends Framework\TestCase
     {
         $this->expectException(Exception\InvalidDirectory::class);
 
-        Definitions::in(__DIR__ . '/Asset/Definition/NonExistentDirectory');
+        Definitions::in(__DIR__ . '/../Fixture/Definition/NonExistentDirectory');
     }
 
     public function testInIgnoresClassesWhichCanNotBeAutoloaded()
@@ -36,7 +36,7 @@ final class DefinitionsTest extends Framework\TestCase
             ->expects($this->never())
             ->method($this->anything());
 
-        Definitions::in(__DIR__ . '/Asset/Definition/CanNotBeAutoloaded')->registerWith($fixtureFactory);
+        Definitions::in(__DIR__ . '/../Fixture/Definition/CanNotBeAutoloaded')->registerWith($fixtureFactory);
     }
 
     public function testInIgnoresClassesWhichDoNotImplementProviderInterface()
@@ -47,7 +47,7 @@ final class DefinitionsTest extends Framework\TestCase
             ->expects($this->never())
             ->method($this->anything());
 
-        Definitions::in(__DIR__ . '/Asset/Definition/DoesNotImplementInterface')->registerWith($fixtureFactory);
+        Definitions::in(__DIR__ . '/../Fixture/Definition/DoesNotImplementInterface')->registerWith($fixtureFactory);
     }
 
     public function testInIgnoresClassesWhichAreAbstract()
@@ -58,7 +58,7 @@ final class DefinitionsTest extends Framework\TestCase
             ->expects($this->never())
             ->method($this->anything());
 
-        Definitions::in(__DIR__ . '/Asset/Definition/IsAbstract')->registerWith($fixtureFactory);
+        Definitions::in(__DIR__ . '/../Fixture/Definition/IsAbstract')->registerWith($fixtureFactory);
     }
 
     public function testInIgnoresClassesWhichHavePrivateConstructors()
@@ -69,7 +69,7 @@ final class DefinitionsTest extends Framework\TestCase
             ->expects($this->never())
             ->method($this->anything());
 
-        Definitions::in(__DIR__ . '/Asset/Definition/PrivateConstructor')->registerWith($fixtureFactory);
+        Definitions::in(__DIR__ . '/../Fixture/Definition/PrivateConstructor')->registerWith($fixtureFactory);
     }
 
     public function testInAcceptsClassesWhichAreAcceptable()
@@ -80,7 +80,7 @@ final class DefinitionsTest extends Framework\TestCase
             ->expects($this->once())
             ->method('defineEntity');
 
-        Definitions::in(__DIR__ . '/Asset/Definition/Acceptable')->registerWith($fixtureFactory);
+        Definitions::in(__DIR__ . '/../Fixture/Definition/Acceptable')->registerWith($fixtureFactory);
     }
 
     public function testThrowsInvalidDefinitionExceptionIfInstantiatingDefinitionsThrowsException()
@@ -93,7 +93,7 @@ final class DefinitionsTest extends Framework\TestCase
 
         $this->expectException(Exception\InvalidDefinition::class);
 
-        Definitions::in(__DIR__ . '/Asset/Definition/ThrowsExceptionDuringConstruction');
+        Definitions::in(__DIR__ . '/../Fixture/Definition/ThrowsExceptionDuringConstruction');
     }
 
     /**

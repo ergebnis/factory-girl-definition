@@ -9,7 +9,7 @@
  * @link https://github.com/localheinz/factory-girl-definition
  */
 
-namespace Localheinz\FactoryGirl\Definition\Test\Unit\Asset\Entity;
+namespace Localheinz\FactoryGirl\Definition\Test\Fixture\Entity;
 
 final class User
 {

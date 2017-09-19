@@ -9,24 +9,18 @@
  * @link https://github.com/localheinz/factory-girl-definition
  */
 
-namespace Localheinz\FactoryGirl\Definition\Test\Unit\Asset\Definition\ThrowsExceptionDuringConstruction;
+namespace Localheinz\FactoryGirl\Definition\Test\Fixture\Definition\IsAbstract;
 
 use FactoryGirl\Provider\Doctrine\FixtureFactory;
 use Localheinz\FactoryGirl\Definition\Definition;
-use Localheinz\FactoryGirl\Definition\Test\Unit\Asset\Entity;
 
 /**
- * Is not acceptable as it throws an exception during construction.
+ * Is not acceptable as it is abstract.
  */
-final class UserDefinition implements Definition
+abstract class UserDefinition implements Definition
 {
-    public function __construct()
-    {
-        throw new \RuntimeException();
-    }
-
     public function accept(FixtureFactory $factory)
     {
-        $factory->defineEntity(Entity\User::class);
+        $factory->defineEntity(\Localheinz\FactoryGirl\Definition\Test\Fixture\Entity\User::class);
     }
 }

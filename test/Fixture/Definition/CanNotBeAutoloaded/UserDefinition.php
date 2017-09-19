@@ -9,7 +9,7 @@
  * @link https://github.com/localheinz/factory-girl-definition
  */
 
-namespace Localheinz\FactoryGirl\Definition\Test\Unit\Asset\Definition\CanNotBeAutoloaded;
+namespace Localheinz\FactoryGirl\Definition\Test\Fixture\Definition\CanNotBeAutoloaded;
 
 use FactoryGirl\Provider\Doctrine\FixtureFactory;
 use Localheinz\FactoryGirl\Definition\Definition;

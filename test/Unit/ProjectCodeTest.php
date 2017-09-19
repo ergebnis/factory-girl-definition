@@ -26,7 +26,7 @@ final class ProjectCodeTest extends Framework\TestCase
     public function testTestCodeIsAbstractOrFinal()
     {
         $this->assertClassesAreAbstractOrFinal(__DIR__ . '/..', [
-            'Unit/Asset/Definition/CanNotBeAutoloaded',
+            'Fixture/Definition/CanNotBeAutoloaded',
         ]);
     }
 }
