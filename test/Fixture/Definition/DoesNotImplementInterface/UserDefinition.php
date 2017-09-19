@@ -14,6 +14,7 @@ declare(strict_types=1);
 namespace Localheinz\FactoryGirl\Definition\Test\Fixture\Definition\DoesNotImplementInterface;
 
 use FactoryGirl\Provider\Doctrine\FixtureFactory;
+use Localheinz\FactoryGirl\Definition\Test\Fixture\Entity;
 
 /**
  * Is not acceptable as it does not implement the DefinitionInterface.
@@ -22,6 +23,6 @@ final class UserDefinition
 {
     public function accept(FixtureFactory $factory)
     {
-        $factory->defineEntity('Foo');
+        $factory->defineEntity(Entity\User::class);
     }
 }

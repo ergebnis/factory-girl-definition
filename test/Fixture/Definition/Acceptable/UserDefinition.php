@@ -15,6 +15,7 @@ namespace Localheinz\FactoryGirl\Definition\Test\Fixture\Definition\Acceptable;
 
 use FactoryGirl\Provider\Doctrine\FixtureFactory;
 use Localheinz\FactoryGirl\Definition\Definition;
+use Localheinz\FactoryGirl\Definition\Test\Fixture\Entity;
 
 /**
  * Is acceptable as it implements the interface.
@@ -23,6 +24,6 @@ final class UserDefinition implements Definition
 {
     public function accept(FixtureFactory $factory)
     {
-        $factory->defineEntity('Foo');
+        $factory->defineEntity(Entity\User::class);
     }
 }

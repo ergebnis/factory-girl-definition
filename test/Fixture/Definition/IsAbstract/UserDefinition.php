@@ -15,6 +15,7 @@ namespace Localheinz\FactoryGirl\Definition\Test\Fixture\Definition\IsAbstract;
 
 use FactoryGirl\Provider\Doctrine\FixtureFactory;
 use Localheinz\FactoryGirl\Definition\Definition;
+use Localheinz\FactoryGirl\Definition\Test\Fixture\Entity;
 
 /**
  * Is not acceptable as it is abstract.
@@ -23,6 +24,6 @@ abstract class UserDefinition implements Definition
 {
     public function accept(FixtureFactory $factory)
     {
-        $factory->defineEntity(\Localheinz\FactoryGirl\Definition\Test\Fixture\Entity\User::class);
+        $factory->defineEntity(Entity\User::class);
     }
 }

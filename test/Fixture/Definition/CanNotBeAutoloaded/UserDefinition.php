@@ -13,6 +13,7 @@ namespace Localheinz\FactoryGirl\Definition\Test\Fixture\Definition\CanNotBeAuto
 
 use FactoryGirl\Provider\Doctrine\FixtureFactory;
 use Localheinz\FactoryGirl\Definition\Definition;
+use Localheinz\FactoryGirl\Definition\Test\Fixture\Entity;
 
 /**
  * Is not acceptable as it can not be autoloaded (class name does not match file name).
@@ -21,6 +22,6 @@ final class MaybeUserDefinition implements Definition
 {
     public function accept(FixtureFactory $factory)
     {
-        $factory->defineEntity('Foo');
+        $factory->defineEntity(Entity\User::class);
     }
 }
