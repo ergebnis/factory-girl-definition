@@ -14,21 +14,21 @@ declare(strict_types=1);
 namespace Localheinz\FactoryGirl\Definition\Test\Unit\Exception;
 
 use Localheinz\FactoryGirl\Definition\Exception;
+use Localheinz\Test\Util\Helper;
 use PHPUnit\Framework;
-use Refinery29\Test\Util;
 
 final class InvalidDirectoryTest extends Framework\TestCase
 {
-    use Util\TestHelper;
+    use Helper;
 
     public function testExtendsInvalidArgumentException()
     {
-        $this->assertExtends(\InvalidArgumentException::class, Exception\InvalidDirectory::class);
+        $this->assertClassExtends(\InvalidArgumentException::class, Exception\InvalidDirectory::class);
     }
 
     public function testNotDirectoryCreatesException()
     {
-        $directory = $this->getFaker()->word;
+        $directory = $this->faker()->word;
 
         $exception = Exception\InvalidDirectory::notDirectory($directory);
 

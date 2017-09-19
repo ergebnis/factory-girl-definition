@@ -16,12 +16,12 @@ namespace Localheinz\FactoryGirl\Definition\Test\Unit;
 use FactoryGirl\Provider\Doctrine\FixtureFactory;
 use Localheinz\FactoryGirl\Definition\Definitions;
 use Localheinz\FactoryGirl\Definition\Exception;
+use Localheinz\Test\Util\Helper;
 use PHPUnit\Framework;
-use Refinery29\Test\Util;
 
 final class DefinitionsTest extends Framework\TestCase
 {
-    use Util\TestHelper;
+    use Helper;
 
     public function testInRejectsNonExistentDirectory()
     {
