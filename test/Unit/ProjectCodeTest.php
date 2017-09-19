@@ -11,9 +11,10 @@
 
 namespace Localheinz\FactoryGirl\Definition\Test\Unit;
 
+use PHPUnit\Framework;
 use Refinery29\Test\Util;
 
-final class ProjectCodeTest extends \PHPUnit_Framework_TestCase
+final class ProjectCodeTest extends Framework\TestCase
 {
     use Util\TestHelper;
 
