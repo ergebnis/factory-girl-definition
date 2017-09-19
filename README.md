@@ -14,7 +14,7 @@ Provides an interface for, and an easy way to find and register entity definitio
 Run
 
 ```
-$ composer require localheinz/factory-girl-definition
+$ composer require --dev localheinz/factory-girl-definition
 ```
 
 ## Usage
