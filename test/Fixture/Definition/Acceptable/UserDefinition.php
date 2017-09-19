@@ -9,7 +9,7 @@
  * @link https://github.com/localheinz/factory-girl-definition
  */
 
-namespace Localheinz\FactoryGirl\Definition\Test\Unit\Asset\Definition\Acceptable;
+namespace Localheinz\FactoryGirl\Definition\Test\Fixture\Definition\Acceptable;
 
 use FactoryGirl\Provider\Doctrine\FixtureFactory;
 use Localheinz\FactoryGirl\Definition\Definition;

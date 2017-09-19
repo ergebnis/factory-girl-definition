@@ -9,15 +9,20 @@
  * @link https://github.com/localheinz/factory-girl-definition
  */
 
-namespace Localheinz\FactoryGirl\Definition\Test\Unit\Asset\Definition\DoesNotImplementInterface;
+namespace Localheinz\FactoryGirl\Definition\Test\Fixture\Definition\PrivateConstructor;
 
 use FactoryGirl\Provider\Doctrine\FixtureFactory;
+use Localheinz\FactoryGirl\Definition\Definition;
 
 /**
- * Is not acceptable as it does not implement the DefinitionInterface.
+ * Is not acceptable as it has a private constructor.
  */
-final class UserDefinition
+final class UserDefinition implements Definition
 {
+    private function __construct()
+    {
+    }
+
     public function accept(FixtureFactory $factory)
     {
         $factory->defineEntity('Foo');

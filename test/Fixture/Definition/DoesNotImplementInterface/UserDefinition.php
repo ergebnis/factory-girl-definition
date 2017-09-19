@@ -9,19 +9,17 @@
  * @link https://github.com/localheinz/factory-girl-definition
  */
 
-namespace Localheinz\FactoryGirl\Definition\Test\Unit\Asset\Definition\IsAbstract;
+namespace Localheinz\FactoryGirl\Definition\Test\Fixture\Definition\DoesNotImplementInterface;
 
 use FactoryGirl\Provider\Doctrine\FixtureFactory;
-use Localheinz\FactoryGirl\Definition\Definition;
-use Localheinz\FactoryGirl\Definition\Test\Unit\Asset\Entity;
 
 /**
- * Is not acceptable as it is abstract.
+ * Is not acceptable as it does not implement the DefinitionInterface.
  */
-abstract class UserDefinition implements Definition
+final class UserDefinition
 {
     public function accept(FixtureFactory $factory)
     {
-        $factory->defineEntity(Entity\User::class);
+        $factory->defineEntity('Foo');
     }
 }
