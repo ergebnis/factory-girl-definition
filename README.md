@@ -64,23 +64,17 @@ use PHPUnit\Framework;
 
 abstract class AbstractIntegrationTestCase extends Framework\TestCase
 {
-    /**
-     * @return ORM\EntityManager
-     */
-    final protected function entityManager()
+    final protected function entityManager(): ORM\EntityManager
     {
         // ...
     }
     
-    /**
-     * @return FixtureFactory
-     */
-    final protected function fixtureFactory()
+    final protected function fixtureFactory(): FixtureFactory
     {
         static $fixtureFactory = null;
         
         if (null === $fixtureFactory) {
-            $fixtureFactory = new Doctrine\FixtureFactory($entityManager);
+            $fixtureFactory = new Doctrine\FixtureFactory($this->entityManager());
             $fixtureFactory->persistOnGet(true);
             
             Definitions::in(__DIR__ . '/../Fixture')->registerWith($fixtureFactory);
