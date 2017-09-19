@@ -44,6 +44,7 @@ final class InvalidDefinitionTest extends Framework\TestCase
         );
 
         $this->assertSame($message, $exception->getMessage());
+        $this->assertSame(0, $exception->getCode());
         $this->assertSame($previousException, $exception->getPrevious());
     }
 }

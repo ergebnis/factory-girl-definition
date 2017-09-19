@@ -22,7 +22,7 @@ final class InvalidDefinition extends \RuntimeException
                 'An exception was thrown while trying to instantiate definition "%s".',
                 $className
             ),
-            null,
+            0,
             $exception
         );
     }
