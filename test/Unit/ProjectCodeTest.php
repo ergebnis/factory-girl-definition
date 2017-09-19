@@ -21,12 +21,21 @@ final class ProjectCodeTest extends Framework\TestCase
 {
     use Helper;
 
-    public function testProductionCodeIsAbstractOrFinal()
+    public function testProductionClassesAreAbstractOrFinal()
     {
         $this->assertClassesAreAbstractOrFinal(__DIR__ . '/../../src');
     }
 
-    public function testTestCodeIsAbstractOrFinal()
+    public function testProductionClassesHaveTests()
+    {
+        $this->assertClassesHaveTests(
+            __DIR__ . '/../../src',
+            'Localheinz\\FactoryGirl\\Definition\\',
+            'Localheinz\\FactoryGirl\\Definition\\Test\\Unit'
+        );
+    }
+
+    public function testTestClassesAreAbstractOrFinal()
     {
         $this->assertClassesAreAbstractOrFinal(__DIR__ . '/..', [
             Fixture\Definition\CanNotBeAutoloaded\MaybeUserDefinition::class,
