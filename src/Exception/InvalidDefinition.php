@@ -13,13 +13,7 @@ namespace Localheinz\FactoryGirl\Definition\Exception;
 
 final class InvalidDefinition extends \RuntimeException
 {
-    /**
-     * @param string     $className
-     * @param \Exception $exception
-     *
-     * @return self
-     */
-    public static function fromClassNameAndException($className, \Exception $exception)
+    public static function fromClassNameAndException(string $className, \Exception $exception): self
     {
         return new self(
             \sprintf(

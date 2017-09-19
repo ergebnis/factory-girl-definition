@@ -21,18 +21,6 @@ final class DefinitionsTest extends Framework\TestCase
 {
     use Util\TestHelper;
 
-    /**
-     * @dataProvider \Refinery29\Test\Util\DataProvider\InvalidString::data()
-     *
-     * @param mixed $directory
-     */
-    public function testInRejectsInvalidString($directory)
-    {
-        $this->expectException(Exception\InvalidDirectory::class);
-
-        Definitions::in($directory);
-    }
-
     public function testInRejectsNonExistentDirectory()
     {
         $this->expectException(Exception\InvalidDirectory::class);

@@ -33,12 +33,8 @@ final class Definitions
      *
      * @return self
      */
-    public static function in($directory)
+    public static function in(string $directory)
     {
-        if (!\is_string($directory)) {
-            throw Exception\InvalidDirectory::notString($directory);
-        }
-
         if (!\is_dir($directory)) {
             throw Exception\InvalidDirectory::notDirectory($directory);
         }
