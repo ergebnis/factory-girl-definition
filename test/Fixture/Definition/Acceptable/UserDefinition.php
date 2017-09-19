@@ -17,7 +17,7 @@ use FactoryGirl\Provider\Doctrine\FixtureFactory;
 use Localheinz\FactoryGirl\Definition\Definition;
 
 /**
- * Is acceptable as it implements the ProviderInterface.
+ * Is acceptable as it implements the interface.
  */
 final class UserDefinition implements Definition
 {
