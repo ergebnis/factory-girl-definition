@@ -13,12 +13,13 @@ declare(strict_types=1);
 
 namespace Localheinz\FactoryGirl\Definition\Test\Unit;
 
+use Localheinz\FactoryGirl\Definition\Test\Fixture;
+use Localheinz\Test\Util\Helper;
 use PHPUnit\Framework;
-use Refinery29\Test\Util;
 
 final class ProjectCodeTest extends Framework\TestCase
 {
-    use Util\TestHelper;
+    use Helper;
 
     public function testProductionCodeIsAbstractOrFinal()
     {
@@ -28,7 +29,7 @@ final class ProjectCodeTest extends Framework\TestCase
     public function testTestCodeIsAbstractOrFinal()
     {
         $this->assertClassesAreAbstractOrFinal(__DIR__ . '/..', [
-            'Fixture/Definition/CanNotBeAutoloaded',
+            Fixture\Definition\CanNotBeAutoloaded\MaybeUserDefinition::class,
         ]);
     }
 }

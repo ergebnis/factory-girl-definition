@@ -21,8 +21,8 @@
     "breerly/factory-girl-php": "^1.0.0",
     "codeclimate/php-test-reporter": "0.4.4",
     "localheinz/php-cs-fixer-config": "~1.5.1",
-    "phpunit/phpunit": "^6.2.4",
-    "refinery29/test-util": "^0.11.3"
+    "localheinz/test-util": "0.2.1",
+    "phpunit/phpunit": "^6.2.4"
   },
   "suggest": {
     "breerly/factory-girl-php": "For creating a fixture factory the definitions can be used with."

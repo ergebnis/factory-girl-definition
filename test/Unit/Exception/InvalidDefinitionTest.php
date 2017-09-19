@@ -14,21 +14,21 @@ declare(strict_types=1);
 namespace Localheinz\FactoryGirl\Definition\Test\Unit\Exception;
 
 use Localheinz\FactoryGirl\Definition\Exception;
+use Localheinz\Test\Util\Helper;
 use PHPUnit\Framework;
-use Refinery29\Test\Util;
 
 final class InvalidDefinitionTest extends Framework\TestCase
 {
-    use Util\TestHelper;
+    use Helper;
 
     public function testExtendsRuntimeException()
     {
-        $this->assertExtends(\RuntimeException::class, Exception\InvalidDefinition::class);
+        $this->assertClassExtends(\RuntimeException::class, Exception\InvalidDefinition::class);
     }
 
     public function testFromClassNameCreatesException()
     {
-        $className = $this->getFaker()->word;
+        $className = $this->faker()->word;
         $previousException = new \Exception();
 
         $exception = Exception\InvalidDefinition::fromClassNameAndException(
