@@ -13,25 +13,7 @@ namespace Localheinz\FactoryGirl\Definition\Exception;
 
 final class InvalidDirectory extends \InvalidArgumentException
 {
-    /**
-     * @param mixed $directory
-     *
-     * @return self
-     */
-    public static function notString($directory)
-    {
-        return new self(\sprintf(
-            'Directory should be a string, got %s instead.',
-            \is_object($directory) ? \get_class($directory) : \gettype($directory)
-        ));
-    }
-
-    /**
-     * @param string $directory
-     *
-     * @return self
-     */
-    public static function notDirectory($directory)
+    public static function notDirectory(string $directory): self
     {
         return new self(\sprintf(
             'Directory should be a directory, but "%s" is not.',

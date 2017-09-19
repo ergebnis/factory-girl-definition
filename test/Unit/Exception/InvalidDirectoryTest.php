@@ -24,25 +24,6 @@ final class InvalidDirectoryTest extends Framework\TestCase
         $this->assertExtends(\InvalidArgumentException::class, Exception\InvalidDirectory::class);
     }
 
-    /**
-     * @dataProvider \Refinery29\Test\Util\DataProvider\InvalidString::data()
-     *
-     * @param mixed $directory
-     */
-    public function testNotStringCreatesException($directory)
-    {
-        $exception = Exception\InvalidDirectory::notString($directory);
-
-        $this->assertInstanceOf(Exception\InvalidDirectory::class, $exception);
-
-        $message = \sprintf(
-            'Directory should be a string, got %s instead.',
-            \is_object($directory) ? \get_class($directory) : \gettype($directory)
-        );
-
-        $this->assertSame($message, $exception->getMessage());
-    }
-
     public function testNotDirectoryCreatesException()
     {
         $directory = $this->getFaker()->word;
