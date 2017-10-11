@@ -15,7 +15,7 @@
   },
   "require": {
     "php": "^7.0",
-    "zendframework/zend-file": "^2.7.1"
+    "localheinz/classy": "0.2.0"
   },
   "require-dev": {
     "breerly/factory-girl-php": "^1.0.0",

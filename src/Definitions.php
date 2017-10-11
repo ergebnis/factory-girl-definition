@@ -14,7 +14,7 @@ declare(strict_types=1);
 namespace Localheinz\FactoryGirl\Definition;
 
 use FactoryGirl\Provider\Doctrine\FixtureFactory;
-use Zend\File;
+use Localheinz\Classy;
 
 final class Definitions
 {
@@ -43,36 +43,33 @@ final class Definitions
             throw Exception\InvalidDirectory::notDirectory($directory);
         }
 
-        $locator = new File\ClassFileLocator($directory);
-
-        /** @var File\PhpClassFile[] $files */
-        $files = \iterator_to_array($locator);
-
         $instance = new self();
 
-        foreach ($files as $file) {
-            foreach ($file->getClasses() as $className) {
-                try {
-                    $reflection = new \ReflectionClass($className);
-                } catch (\ReflectionException $exception) {
-                    continue;
-                }
+        $constructs = Classy\Constructs::fromDirectory($directory);
 
-                if (!$reflection->isSubclassOf(Definition::class) || !$reflection->isInstantiable()) {
-                    continue;
-                }
+        foreach ($constructs as $construct) {
+            $className = $construct->name();
 
-                try {
-                    $definition = $reflection->newInstance();
-                } catch (\Exception $exception) {
-                    throw Exception\InvalidDefinition::fromClassNameAndException(
-                        $className,
-                        $exception
-                    );
-                }
-
-                $instance->definitions[] = $definition;
+            try {
+                $reflection = new \ReflectionClass($className);
+            } catch (\ReflectionException $exception) {
+                continue;
             }
+
+            if (!$reflection->isSubclassOf(Definition::class) || !$reflection->isInstantiable()) {
+                continue;
+            }
+
+            try {
+                $definition = $reflection->newInstance();
+            } catch (\Exception $exception) {
+                throw Exception\InvalidDefinition::fromClassNameAndException(
+                    $className,
+                    $exception
+                );
+            }
+
+            $instance->definitions[] = $definition;
         }
 
         return $instance;
