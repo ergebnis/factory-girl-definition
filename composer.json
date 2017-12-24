@@ -19,6 +19,7 @@
   },
   "require-dev": {
     "breerly/factory-girl-php": "^1.0.0",
+    "infection/infection": "~0.7.0",
     "localheinz/php-cs-fixer-config": "~1.6.2",
     "localheinz/test-util": "0.5.0",
     "phpunit/phpunit": "^6.5.5"
