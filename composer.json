@@ -1,7 +1,7 @@
 {
   "name": "localheinz/factory-girl-definition",
-  "description": "Provides an interface for, and an easy way to find and register entity definitions for breerly/factory-girl-php.",
   "type": "library",
+  "description": "Provides an interface for, and an easy way to find and register entity definitions for breerly/factory-girl-php.",
   "license": "MIT",
   "authors": [
     {
@@ -9,10 +9,6 @@
       "email": "am@localheinz.com"
     }
   ],
-  "config": {
-    "preferred-install": "dist",
-    "sort-packages": true
-  },
   "require": {
     "php": "^7.0",
     "localheinz/classy": "0.3.0"
@@ -26,6 +22,10 @@
   },
   "suggest": {
     "breerly/factory-girl-php": "For creating a fixture factory the definitions can be used with."
+  },
+  "config": {
+    "preferred-install": "dist",
+    "sort-packages": true
   },
   "autoload": {
     "psr-4": {
