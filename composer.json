@@ -2,6 +2,7 @@
   "name": "localheinz/factory-girl-definition",
   "type": "library",
   "description": "Provides an interface for, and an easy way to find and register entity definitions for breerly/factory-girl-php.",
+  "homepage": "https://github.com/localheinz/factory-girl-definition",
   "license": "MIT",
   "authors": [
     {
@@ -36,5 +37,9 @@
     "psr-4": {
       "Localheinz\\FactoryGirl\\Definition\\Test\\": "test"
     }
+  },
+  "support": {
+    "issues": "https://github.com/localheinz/factory-girl-definition/issues",
+    "source": "https://github.com/localheinz/factory-girl-definition"
   }
 }
