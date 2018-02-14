@@ -62,6 +62,11 @@ use PHPUnit\Framework;
 
 abstract class AbstractIntegrationTestCase extends Framework\TestCase
 {
+    /**
+     * @var FixtureFactory
+     */ 
+    private $fixtureFactory;
+    
     final protected function entityManager(): ORM\EntityManager
     {
         // ...
@@ -69,16 +74,14 @@ abstract class AbstractIntegrationTestCase extends Framework\TestCase
     
     final protected function fixtureFactory(): FixtureFactory
     {
-        static $fixtureFactory = null;
-        
-        if (null === $fixtureFactory) {
-            $fixtureFactory = new Doctrine\FixtureFactory($this->entityManager());
-            $fixtureFactory->persistOnGet(true);
+        if (null === $this->fixtureFactory) {
+            $this->fixtureFactory = new FixtureFactory($this->entityManager());
+            $this->fixtureFactory->persistOnGet(true);
             
-            Definitions::in(__DIR__ . '/../Fixture')->registerWith($fixtureFactory);
+            Definitions::in(__DIR__ . '/../Fixture')->registerWith($this->fixtureFactory);
         }
         
-        return $fixtureFactory;
+        return $this->fixtureFactory;
     }
 }
 ```
