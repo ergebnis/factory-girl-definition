@@ -16,6 +16,7 @@ namespace Localheinz\FactoryGirl\Definition\Test\Unit;
 use FactoryGirl\Provider\Doctrine\FixtureFactory;
 use Localheinz\FactoryGirl\Definition\Definitions;
 use Localheinz\FactoryGirl\Definition\Exception;
+use Localheinz\FactoryGirl\Definition\Test\Fixture;
 use Localheinz\Test\Util\Helper;
 use PHPUnit\Framework;
 
@@ -32,77 +33,63 @@ final class DefinitionsTest extends Framework\TestCase
 
     public function testInIgnoresClassesWhichCanNotBeAutoloaded()
     {
-        $fixtureFactory = $this->createFixtureFactoryMock();
+        $fixtureFactory = $this->prophesize(FixtureFactory::class);
 
         $fixtureFactory
-            ->expects($this->never())
-            ->method($this->anything());
+            ->defineEntity()
+            ->shouldNotBeCalled();
 
-        Definitions::in(__DIR__ . '/../Fixture/Definition/CanNotBeAutoloaded')->registerWith($fixtureFactory);
+        Definitions::in(__DIR__ . '/../Fixture/Definition/CanNotBeAutoloaded')->registerWith($fixtureFactory->reveal());
     }
 
     public function testInIgnoresClassesWhichDoNotImplementProviderInterface()
     {
-        $fixtureFactory = $this->createFixtureFactoryMock();
+        $fixtureFactory = $this->prophesize(FixtureFactory::class);
 
         $fixtureFactory
-            ->expects($this->never())
-            ->method($this->anything());
+            ->defineEntity()
+            ->shouldNotBeCalled();
 
-        Definitions::in(__DIR__ . '/../Fixture/Definition/DoesNotImplementInterface')->registerWith($fixtureFactory);
+        Definitions::in(__DIR__ . '/../Fixture/Definition/DoesNotImplementInterface')->registerWith($fixtureFactory->reveal());
     }
 
     public function testInIgnoresClassesWhichAreAbstract()
     {
-        $fixtureFactory = $this->createFixtureFactoryMock();
+        $fixtureFactory = $this->prophesize(FixtureFactory::class);
 
         $fixtureFactory
-            ->expects($this->never())
-            ->method($this->anything());
+            ->defineEntity()
+            ->shouldNotBeCalled();
 
-        Definitions::in(__DIR__ . '/../Fixture/Definition/IsAbstract')->registerWith($fixtureFactory);
+        Definitions::in(__DIR__ . '/../Fixture/Definition/IsAbstract')->registerWith($fixtureFactory->reveal());
     }
 
     public function testInIgnoresClassesWhichHavePrivateConstructors()
     {
-        $fixtureFactory = $this->createFixtureFactoryMock();
+        $fixtureFactory = $this->prophesize(FixtureFactory::class);
 
         $fixtureFactory
-            ->expects($this->never())
-            ->method($this->anything());
+            ->defineEntity()
+            ->shouldNotBeCalled();
 
-        Definitions::in(__DIR__ . '/../Fixture/Definition/PrivateConstructor')->registerWith($fixtureFactory);
+        Definitions::in(__DIR__ . '/../Fixture/Definition/PrivateConstructor')->registerWith($fixtureFactory->reveal());
     }
 
     public function testInAcceptsClassesWhichAreAcceptable()
     {
-        $fixtureFactory = $this->createFixtureFactoryMock();
+        $fixtureFactory = $this->prophesize(FixtureFactory::class);
 
         $fixtureFactory
-            ->expects($this->once())
-            ->method('defineEntity');
+            ->defineEntity(Fixture\Entity\User::class)
+            ->shouldBeCalled();
 
-        Definitions::in(__DIR__ . '/../Fixture/Definition/Acceptable')->registerWith($fixtureFactory);
+        Definitions::in(__DIR__ . '/../Fixture/Definition/Acceptable')->registerWith($fixtureFactory->reveal());
     }
 
     public function testThrowsInvalidDefinitionExceptionIfInstantiatingDefinitionsThrowsException()
     {
-        $fixtureFactory = $this->createFixtureFactoryMock();
-
-        $fixtureFactory
-            ->expects($this->never())
-            ->method($this->anything());
-
         $this->expectException(Exception\InvalidDefinition::class);
 
         Definitions::in(__DIR__ . '/../Fixture/Definition/ThrowsExceptionDuringConstruction');
-    }
-
-    /**
-     * @return FixtureFactory|\PHPUnit_Framework_MockObject_MockObject
-     */
-    private function createFixtureFactoryMock()
-    {
-        return $this->createMock(FixtureFactory::class);
     }
 }
