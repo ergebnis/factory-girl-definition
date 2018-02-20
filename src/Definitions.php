@@ -14,6 +14,7 @@ declare(strict_types=1);
 namespace Localheinz\FactoryGirl\Definition;
 
 use FactoryGirl\Provider\Doctrine\FixtureFactory;
+use Faker\Generator;
 use Localheinz\Classy;
 
 final class Definitions
@@ -79,11 +80,33 @@ final class Definitions
      * Registers all found definitions with the specified fixture factory.
      *
      * @param FixtureFactory $fixtureFactory
+     *
+     * @return self
      */
-    public function registerWith(FixtureFactory $fixtureFactory)
+    public function registerWith(FixtureFactory $fixtureFactory): self
     {
         foreach ($this->definitions as $definition) {
             $definition->accept($fixtureFactory);
         }
+
+        return $this;
+    }
+
+    /**
+     * Provides all found definitions with the specified faker generator if they desire it.
+     *
+     * @param Generator $faker
+     *
+     * @return self
+     */
+    public function provideWith(Generator $faker): self
+    {
+        foreach ($this->definitions as $definition) {
+            if ($definition instanceof FakerAwareDefinition) {
+                $definition->provideWith($faker);
+            }
+        }
+
+        return $this;
     }
 }
