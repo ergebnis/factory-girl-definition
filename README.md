@@ -19,8 +19,13 @@ $ composer require --dev localheinz/factory-girl-definition
 
 ### Create Definitions
 
-Implement the `Definition` interface and use the instance of `FactoryGirl\Provider\Doctrine\FixtureFactory` 
-that is passed in into `accept()` to define entities:
+Implement one of the
+
+* `Localheinz\FactoryGirl\Definition\Definition` 
+* `Localheinz\FactoryGirl\Definition\FakerAwareDefinition` 
+
+interfaces and use the instance of `FactoryGirl\Provider\Doctrine\FixtureFactory` 
+that is passed into `accept()` to define entities:
 
 ```php
 <?php
@@ -48,7 +53,9 @@ However, it's probably a good idea to create a definition for each entity.
 ### Register Definitions
 
 Lazily instantiate an instance of `FactoryGirl\Provider\Doctrine\FixtureFactory` 
-and use `Definitions` to find definitions and register them with the factory:
+and use `Definitions` to find definitions, register definitions with the 
+fixture factory, and optionally provide definitions with an instance of 
+`Faker\Generator`:
  
 ```php
 <?php
@@ -57,6 +64,7 @@ namespace Foo\Bar\Test\Integration;
 
 use Doctrine\ORM;
 use FactoryGirl\Provider\Doctrine\FixtureFactory;
+use Faker\Generator;
 use Localheinz\FactoryGirl\Definition\Definitions;
 use PHPUnit\Framework;
 
@@ -72,13 +80,22 @@ abstract class AbstractIntegrationTestCase extends Framework\TestCase
         // ...
     }
     
+    final protected function faker(): Generator
+    {
+        // ...
+    }
+    
     final protected function fixtureFactory(): FixtureFactory
     {
         if (null === $this->fixtureFactory) {
-            $this->fixtureFactory = new FixtureFactory($this->entityManager());
-            $this->fixtureFactory->persistOnGet(true);
+            $fixtureFactory = new FixtureFactory($this->entityManager());
+            $fixtureFactory->persistOnGet(true);
             
-            Definitions::in(__DIR__ . '/../Fixture')->registerWith($this->fixtureFactory);
+            Definitions::in(__DIR__ . '/../Fixture')
+                ->registerWith($fixtureFactory)
+                ->provideWith($this->faker());
+            
+            $this->fixtureFactory = $fixtureFactory;
         }
         
         return $this->fixtureFactory;
