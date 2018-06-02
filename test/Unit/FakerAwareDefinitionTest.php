@@ -18,6 +18,9 @@ use Localheinz\FactoryGirl\Definition\FakerAwareDefinition;
 use Localheinz\Test\Util\Helper;
 use PHPUnit\Framework;
 
+/**
+ * @internal
+ */
 final class FakerAwareDefinitionTest extends Framework\TestCase
 {
     use Helper;

@@ -23,6 +23,9 @@ use Localheinz\FactoryGirl\Definition\Test\Fixture;
 use Localheinz\Test\Util\Helper;
 use PHPUnit\Framework;
 
+/**
+ * @internal
+ */
 final class DefinitionsTest extends Framework\TestCase
 {
     use Helper;
