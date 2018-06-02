@@ -15,12 +15,14 @@ namespace Localheinz\FactoryGirl\Definition\Test\Unit;
 
 use Faker\Generator;
 use Localheinz\FactoryGirl\Definition\AbstractDefinition;
-use Localheinz\FactoryGirl\Definition\Definition;
 use Localheinz\FactoryGirl\Definition\FakerAwareDefinition;
 use Localheinz\FactoryGirl\Definition\Test\Fixture;
 use Localheinz\Test\Util\Helper;
 use PHPUnit\Framework;
 
+/**
+ * @internal
+ */
 final class AbstractDefinitionTest extends Framework\TestCase
 {
     use Helper;

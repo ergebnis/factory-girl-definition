@@ -17,6 +17,9 @@ use Localheinz\FactoryGirl\Definition\Exception;
 use Localheinz\Test\Util\Helper;
 use PHPUnit\Framework;
 
+/**
+ * @internal
+ */
 final class InvalidDefinitionTest extends Framework\TestCase
 {
     use Helper;
