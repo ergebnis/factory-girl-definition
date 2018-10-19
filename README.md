@@ -1,6 +1,6 @@
 # factory-girl-definition
 
-[![Build Status](https://travis-ci.org/localheinz/factory-girl-definition.svg?branch=master)](https://travis-ci.org/localheinz/factory-girl-definition)
+[![Build Status](https://travis-ci.com/localheinz/factory-girl-definition.svg?branch=master)](https://travis-ci.com/localheinz/factory-girl-definition)
 [![codecov](https://codecov.io/gh/localheinz/factory-girl-definition/branch/master/graph/badge.svg)](https://codecov.io/gh/localheinz/factory-girl-definition)
 [![Latest Stable Version](https://poser.pugx.org/localheinz/factory-girl-definition/v/stable)](https://packagist.org/packages/localheinz/factory-girl-definition)
 [![Total Downloads](https://poser.pugx.org/localheinz/factory-girl-definition/downloads)](https://packagist.org/packages/localheinz/factory-girl-definition)
