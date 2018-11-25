@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "012ec68203a3b27f827934e296082d89",
+    "content-hash": "9b5151445d3795f41ad5bbe997d77566",
     "packages": [
         {
             "name": "localheinz/classy",
@@ -3642,7 +3642,7 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": "^7.0"
+        "php": "^7.1"
     },
     "platform-dev": []
 }
