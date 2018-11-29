@@ -53,6 +53,6 @@ final class AbstractDefinitionTest extends Framework\TestCase
 
         $definition->provideWith($faker);
 
-        $this->assertSame($faker, $definition->faker());
+        self::assertSame($faker, $definition->faker());
     }
 }

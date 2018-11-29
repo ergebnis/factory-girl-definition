@@ -96,10 +96,10 @@ final class DefinitionsTest extends Framework\TestCase
     {
         $definitions = Definitions::in(__DIR__ . '/../Fixture/Definition/Acceptable');
 
-        $this->assertInstanceOf(Definitions::class, $definitions);
+        self::assertInstanceOf(Definitions::class, $definitions);
 
-        $this->assertSame($definitions, $definitions->registerWith($this->prophesize(FixtureFactory::class)->reveal()));
-        $this->assertSame($definitions, $definitions->provideWith($this->prophesize(Generator::class)->reveal()));
+        self::assertSame($definitions, $definitions->registerWith($this->prophesize(FixtureFactory::class)->reveal()));
+        self::assertSame($definitions, $definitions->provideWith($this->prophesize(Generator::class)->reveal()));
     }
 
     public function testInAcceptsClassesWhichAreAcceptableAndFakerAwareAndProvidesThemWithFaker()
@@ -116,20 +116,20 @@ final class DefinitionsTest extends Framework\TestCase
 
         $definitions = $property->getValue($definitions);
 
-        $this->assertInternalType('array', $definitions);
+        self::assertInternalType('array', $definitions);
 
-        $fakerAwareDefinitions = \array_filter($definitions, function (Definition $definition) {
+        $fakerAwareDefinitions = \array_filter($definitions, static function (Definition $definition) {
             return $definition instanceof FakerAwareDefinition;
         });
 
-        $this->assertCount(1, $fakerAwareDefinitions);
-        $this->assertContainsOnlyInstancesOf(FakerAwareDefinition::class, $fakerAwareDefinitions);
+        self::assertCount(1, $fakerAwareDefinitions);
+        self::assertContainsOnlyInstancesOf(FakerAwareDefinition::class, $fakerAwareDefinitions);
 
         /** @var Fixture\Definition\FakerAware\GroupDefinition $fakerAwareDefinition */
         $fakerAwareDefinition = \array_shift($fakerAwareDefinitions);
 
-        $this->assertInstanceOf(Fixture\Definition\FakerAware\GroupDefinition::class, $fakerAwareDefinition);
-        $this->assertSame($faker->reveal(), $fakerAwareDefinition->faker());
+        self::assertInstanceOf(Fixture\Definition\FakerAware\GroupDefinition::class, $fakerAwareDefinition);
+        self::assertSame($faker->reveal(), $fakerAwareDefinition->faker());
     }
 
     public function testThrowsInvalidDefinitionExceptionIfInstantiatingDefinitionsThrowsException()

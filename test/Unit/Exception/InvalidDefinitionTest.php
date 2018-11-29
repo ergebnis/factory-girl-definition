@@ -39,15 +39,15 @@ final class InvalidDefinitionTest extends Framework\TestCase
             $previousException
         );
 
-        $this->assertInstanceOf(Exception\InvalidDefinition::class, $exception);
+        self::assertInstanceOf(Exception\InvalidDefinition::class, $exception);
 
         $message = \sprintf(
             'An exception was thrown while trying to instantiate definition "%s".',
             $className
         );
 
-        $this->assertSame($message, $exception->getMessage());
-        $this->assertSame(0, $exception->getCode());
-        $this->assertSame($previousException, $exception->getPrevious());
+        self::assertSame($message, $exception->getMessage());
+        self::assertSame(0, $exception->getCode());
+        self::assertSame($previousException, $exception->getPrevious());
     }
 }
