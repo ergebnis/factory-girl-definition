@@ -35,13 +35,13 @@ final class InvalidDirectoryTest extends Framework\TestCase
 
         $exception = Exception\InvalidDirectory::notDirectory($directory);
 
-        $this->assertInstanceOf(Exception\InvalidDirectory::class, $exception);
+        self::assertInstanceOf(Exception\InvalidDirectory::class, $exception);
 
         $message = \sprintf(
             'Directory should be a directory, but "%s" is not.',
             $directory
         );
 
-        $this->assertSame($message, $exception->getMessage());
+        self::assertSame($message, $exception->getMessage());
     }
 }
