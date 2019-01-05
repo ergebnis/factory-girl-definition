@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 /**
- * Copyright (c) 2017 Andreas Möller.
+ * Copyright (c) 2017 Andreas Möller
  *
  * For the full copyright and license information, please view
  * the LICENSE file that was distributed with this source code.
@@ -30,14 +30,14 @@ final class DefinitionsTest extends Framework\TestCase
 {
     use Helper;
 
-    public function testInRejectsNonExistentDirectory()
+    public function testInRejectsNonExistentDirectory(): void
     {
         $this->expectException(Exception\InvalidDirectory::class);
 
         Definitions::in(__DIR__ . '/../Fixture/Definition/NonExistentDirectory');
     }
 
-    public function testInIgnoresClassesWhichCanNotBeAutoloaded()
+    public function testInIgnoresClassesWhichCanNotBeAutoloaded(): void
     {
         $fixtureFactory = $this->prophesize(FixtureFactory::class);
 
@@ -48,7 +48,7 @@ final class DefinitionsTest extends Framework\TestCase
         Definitions::in(__DIR__ . '/../Fixture/Definition/CanNotBeAutoloaded')->registerWith($fixtureFactory->reveal());
     }
 
-    public function testInIgnoresClassesWhichDoNotImplementProviderInterface()
+    public function testInIgnoresClassesWhichDoNotImplementProviderInterface(): void
     {
         $fixtureFactory = $this->prophesize(FixtureFactory::class);
 
@@ -59,7 +59,7 @@ final class DefinitionsTest extends Framework\TestCase
         Definitions::in(__DIR__ . '/../Fixture/Definition/DoesNotImplementInterface')->registerWith($fixtureFactory->reveal());
     }
 
-    public function testInIgnoresClassesWhichAreAbstract()
+    public function testInIgnoresClassesWhichAreAbstract(): void
     {
         $fixtureFactory = $this->prophesize(FixtureFactory::class);
 
@@ -70,7 +70,7 @@ final class DefinitionsTest extends Framework\TestCase
         Definitions::in(__DIR__ . '/../Fixture/Definition/IsAbstract')->registerWith($fixtureFactory->reveal());
     }
 
-    public function testInIgnoresClassesWhichHavePrivateConstructors()
+    public function testInIgnoresClassesWhichHavePrivateConstructors(): void
     {
         $fixtureFactory = $this->prophesize(FixtureFactory::class);
 
@@ -81,7 +81,7 @@ final class DefinitionsTest extends Framework\TestCase
         Definitions::in(__DIR__ . '/../Fixture/Definition/PrivateConstructor')->registerWith($fixtureFactory->reveal());
     }
 
-    public function testInAcceptsClassesWhichAreAcceptable()
+    public function testInAcceptsClassesWhichAreAcceptable(): void
     {
         $fixtureFactory = $this->prophesize(FixtureFactory::class);
 
@@ -92,7 +92,7 @@ final class DefinitionsTest extends Framework\TestCase
         Definitions::in(__DIR__ . '/../Fixture/Definition/Acceptable')->registerWith($fixtureFactory->reveal());
     }
 
-    public function testFluentInterface()
+    public function testFluentInterface(): void
     {
         $definitions = Definitions::in(__DIR__ . '/../Fixture/Definition/Acceptable');
 
@@ -102,7 +102,7 @@ final class DefinitionsTest extends Framework\TestCase
         self::assertSame($definitions, $definitions->provideWith($this->prophesize(Generator::class)->reveal()));
     }
 
-    public function testInAcceptsClassesWhichAreAcceptableAndFakerAwareAndProvidesThemWithFaker()
+    public function testInAcceptsClassesWhichAreAcceptableAndFakerAwareAndProvidesThemWithFaker(): void
     {
         $faker = $this->prophesize(Generator::class);
 
@@ -132,7 +132,7 @@ final class DefinitionsTest extends Framework\TestCase
         self::assertSame($faker->reveal(), $fakerAwareDefinition->faker());
     }
 
-    public function testThrowsInvalidDefinitionExceptionIfInstantiatingDefinitionsThrowsException()
+    public function testThrowsInvalidDefinitionExceptionIfInstantiatingDefinitionsThrowsException(): void
     {
         $this->expectException(Exception\InvalidDefinition::class);
 

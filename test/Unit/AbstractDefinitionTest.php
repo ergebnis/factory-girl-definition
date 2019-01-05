@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 /**
- * Copyright (c) 2017 Andreas Möller.
+ * Copyright (c) 2017 Andreas Möller
  *
  * For the full copyright and license information, please view
  * the LICENSE file that was distributed with this source code.
@@ -27,12 +27,12 @@ final class AbstractDefinitionTest extends Framework\TestCase
 {
     use Helper;
 
-    public function testImplementsFakerAwareDefinitionInterface()
+    public function testImplementsFakerAwareDefinitionInterface(): void
     {
         $this->assertClassImplementsInterface(FakerAwareDefinition::class, AbstractDefinition::class);
     }
 
-    public function testFakerThrowsBadMethodCallExceptionIfDefinitionHasNotBeenProvidedWithFaker()
+    public function testFakerThrowsBadMethodCallExceptionIfDefinitionHasNotBeenProvidedWithFaker(): void
     {
         $definition = new Fixture\Definition\ExtendsAbstractDefinition\UserDefinition();
 
@@ -45,7 +45,7 @@ final class AbstractDefinitionTest extends Framework\TestCase
         $definition->faker();
     }
 
-    public function testFakerReturnsFakerWhenProvidedWithIt()
+    public function testFakerReturnsFakerWhenProvidedWithIt(): void
     {
         $faker = new Generator();
 

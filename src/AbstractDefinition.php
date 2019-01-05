@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 /**
- * Copyright (c) 2017 Andreas Möller.
+ * Copyright (c) 2017 Andreas Möller
  *
  * For the full copyright and license information, please view
  * the LICENSE file that was distributed with this source code.
@@ -22,7 +22,7 @@ abstract class AbstractDefinition implements FakerAwareDefinition
      */
     private $faker;
 
-    final public function provideWith(Generator $faker)
+    final public function provideWith(Generator $faker): void
     {
         $this->faker = $faker;
     }
