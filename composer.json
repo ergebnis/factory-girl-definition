@@ -15,7 +15,7 @@
     "localheinz/classy": "0.3.0"
   },
   "require-dev": {
-    "breerly/factory-girl-php": "^1.0.0",
+    "breerly/factory-girl-php": "^1.0.3",
     "infection/infection": "~0.7.0",
     "localheinz/composer-normalize": "^1.1.0",
     "localheinz/php-cs-fixer-config": "~1.19.0",
