@@ -20,7 +20,7 @@
     "localheinz/composer-normalize": "^1.1.0",
     "localheinz/php-cs-fixer-config": "~1.19.0",
     "localheinz/test-util": "0.5.0",
-    "phpunit/phpunit": "^6.5.5"
+    "phpunit/phpunit": "^7.5.1"
   },
   "suggest": {
     "breerly/factory-girl-php": "For creating a fixture factory the definitions can be used with."
