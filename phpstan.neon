@@ -1,0 +1,8 @@
+includes:
+	- vendor/phpstan/phpstan/conf/config.levelmax.neon
+
+parameters:
+	paths:
+		- src
+		- test
+	tmpDir: %currentWorkingDirectory%/.build/phpstan
