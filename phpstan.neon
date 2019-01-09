@@ -1,0 +1,9 @@
+includes:
+	- vendor/jangregor/phpstan-prophecy/src/extension.neon
+	- vendor/phpstan/phpstan/conf/config.levelmax.neon
+
+parameters:
+	paths:
+		- src
+		- test
+	tmpDir: %currentWorkingDirectory%/.build/phpstan
