@@ -11,37 +11,29 @@ declare(strict_types=1);
  * @link https://github.com/localheinz/factory-girl-definition
  */
 
-namespace Localheinz\FactoryGirl\Definition\Test\Unit;
+namespace Localheinz\FactoryGirl\Definition\Test\AutoReview;
 
-use Localheinz\FactoryGirl\Definition\Test\Fixture;
 use Localheinz\Test\Util\Helper;
 use PHPUnit\Framework;
 
 /**
  * @internal
  */
-final class ProjectCodeTest extends Framework\TestCase
+final class SrcCodeTest extends Framework\TestCase
 {
     use Helper;
 
-    public function testProductionClassesAreAbstractOrFinal(): void
+    public function testSrcClassesAreAbstractOrFinal(): void
     {
         $this->assertClassesAreAbstractOrFinal(__DIR__ . '/../../src');
     }
 
-    public function testProductionClassesHaveTests(): void
+    public function testSrcClassesHaveUnitTests(): void
     {
         $this->assertClassesHaveTests(
             __DIR__ . '/../../src',
             'Localheinz\\FactoryGirl\\Definition\\',
             'Localheinz\\FactoryGirl\\Definition\\Test\\Unit'
         );
-    }
-
-    public function testTestClassesAreAbstractOrFinal(): void
-    {
-        $this->assertClassesAreAbstractOrFinal(__DIR__ . '/..', [
-            Fixture\Definition\CanNotBeAutoloaded\MaybeUserDefinition::class,
-        ]);
     }
 }
