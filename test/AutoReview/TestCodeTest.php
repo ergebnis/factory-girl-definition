@@ -13,7 +13,6 @@ declare(strict_types=1);
 
 namespace Localheinz\FactoryGirl\Definition\Test\AutoReview;
 
-use Localheinz\FactoryGirl\Definition\Test\Fixture;
 use Localheinz\Test\Util\Helper;
 use PHPUnit\Framework;
 
@@ -26,11 +25,6 @@ final class TestCodeTest extends Framework\TestCase
 
     public function testTestClassesAreAbstractOrFinal(): void
     {
-        $this->assertClassesAreAbstractOrFinal(
-            __DIR__ . '/..',
-            [
-                Fixture\Definition\CanNotBeAutoloaded\MaybeUserDefinition::class,
-            ]
-        );
+        $this->assertClassesAreAbstractOrFinal(__DIR__ . '/..');
     }
 }

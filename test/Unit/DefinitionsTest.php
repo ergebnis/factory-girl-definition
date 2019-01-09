@@ -37,17 +37,6 @@ final class DefinitionsTest extends Framework\TestCase
         Definitions::in(__DIR__ . '/../Fixture/Definition/NonExistentDirectory');
     }
 
-    public function testInIgnoresClassesWhichCanNotBeAutoloaded(): void
-    {
-        $fixtureFactory = $this->prophesize(FixtureFactory::class);
-
-        $fixtureFactory
-            ->defineEntity()
-            ->shouldNotBeCalled();
-
-        Definitions::in(__DIR__ . '/../Fixture/Definition/CanNotBeAutoloaded')->registerWith($fixtureFactory->reveal());
-    }
-
     public function testInIgnoresClassesWhichDoNotImplementProviderInterface(): void
     {
         $fixtureFactory = $this->prophesize(FixtureFactory::class);
