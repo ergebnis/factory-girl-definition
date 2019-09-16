@@ -20,7 +20,7 @@ jobs:
   include:
     - stage: Style
 
-      php: 7.1
+      php: 7.2
 
       before_install:
         - source .travis/xdebug.sh
@@ -61,7 +61,7 @@ jobs:
 
       stage: Test
 
-      php: 7.1
+      php: 7.2
 
       env: WITH_LOWEST=true
 
@@ -87,45 +87,27 @@ jobs:
 
     - <<: *TEST
 
-      php: 7.1
+      php: 7.2
 
       env: WITH_LOCKED=true
 
     - <<: *TEST
 
-      php: 7.1
+      php: 7.2
 
       env: WITH_HIGHEST=true
 
     - <<: *TEST
 
-      php: 7.2
+      php: 7.3
 
       env: WITH_LOWEST=true
 
     - <<: *TEST
 
-      php: 7.2
+      php: 7.3
 
       env: WITH_LOCKED=true WITH_COVERAGE=true
-
-    - <<: *TEST
-
-      php: 7.2
-
-      env: WITH_HIGHEST=true
-
-    - <<: *TEST
-
-      php: 7.3
-
-      env: WITH_LOWEST=true
-
-    - <<: *TEST
-
-      php: 7.3
-
-      env: WITH_LOCKED=true
 
     - <<: *TEST
 
@@ -135,7 +117,7 @@ jobs:
 
     - stage: Infection
 
-      php: 7.2
+      php: 7.3
 
       before_install:
         - source .travis/xdebug.sh
