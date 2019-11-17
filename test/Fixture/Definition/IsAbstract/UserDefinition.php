@@ -22,7 +22,7 @@ use Localheinz\FactoryGirl\Definition\Test\Fixture\Entity;
  */
 abstract class UserDefinition implements Definition
 {
-    public function accept(FixtureFactory $factory): void
+    final public function accept(FixtureFactory $factory): void
     {
         $factory->defineEntity(Entity\User::class);
     }
