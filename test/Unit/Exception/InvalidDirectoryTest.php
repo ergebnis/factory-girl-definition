@@ -19,6 +19,8 @@ use PHPUnit\Framework;
 
 /**
  * @internal
+ *
+ * @covers \Localheinz\FactoryGirl\Definition\Exception\InvalidDirectory
  */
 final class InvalidDirectoryTest extends Framework\TestCase
 {
@@ -26,12 +28,12 @@ final class InvalidDirectoryTest extends Framework\TestCase
 
     public function testExtendsInvalidArgumentException(): void
     {
-        $this->assertClassExtends(\InvalidArgumentException::class, Exception\InvalidDirectory::class);
+        self::assertClassExtends(\InvalidArgumentException::class, Exception\InvalidDirectory::class);
     }
 
     public function testNotDirectoryCreatesException(): void
     {
-        $directory = $this->faker()->word;
+        $directory = self::faker()->word;
 
         $exception = Exception\InvalidDirectory::notDirectory($directory);
 

@@ -35,7 +35,7 @@ final class GroupDefinition implements FakerAwareDefinition
         $this->faker = $faker;
     }
 
-    public function faker()
+    public function faker(): Generator
     {
         return $this->faker;
     }

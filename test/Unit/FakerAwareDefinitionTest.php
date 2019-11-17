@@ -20,6 +20,8 @@ use PHPUnit\Framework;
 
 /**
  * @internal
+ *
+ * @coversNothing
  */
 final class FakerAwareDefinitionTest extends Framework\TestCase
 {
@@ -27,6 +29,6 @@ final class FakerAwareDefinitionTest extends Framework\TestCase
 
     public function testExtendsDefinitionInterface(): void
     {
-        $this->assertInterfaceExtends(Definition::class, FakerAwareDefinition::class);
+        self::assertInterfaceExtends(Definition::class, FakerAwareDefinition::class);
     }
 }

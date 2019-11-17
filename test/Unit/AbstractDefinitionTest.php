@@ -22,6 +22,8 @@ use PHPUnit\Framework;
 
 /**
  * @internal
+ *
+ * @covers \Localheinz\FactoryGirl\Definition\AbstractDefinition
  */
 final class AbstractDefinitionTest extends Framework\TestCase
 {
@@ -29,7 +31,7 @@ final class AbstractDefinitionTest extends Framework\TestCase
 
     public function testImplementsFakerAwareDefinitionInterface(): void
     {
-        $this->assertClassImplementsInterface(FakerAwareDefinition::class, AbstractDefinition::class);
+        self::assertClassImplementsInterface(FakerAwareDefinition::class, AbstractDefinition::class);
     }
 
     public function testFakerThrowsBadMethodCallExceptionIfDefinitionHasNotBeenProvidedWithFaker(): void

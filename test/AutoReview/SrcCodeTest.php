@@ -18,22 +18,19 @@ use PHPUnit\Framework;
 
 /**
  * @internal
+ *
+ * @coversNothing
  */
 final class SrcCodeTest extends Framework\TestCase
 {
     use Helper;
 
-    public function testSrcClassesAreAbstractOrFinal(): void
-    {
-        $this->assertClassesAreAbstractOrFinal(__DIR__ . '/../../src');
-    }
-
     public function testSrcClassesHaveUnitTests(): void
     {
-        $this->assertClassesHaveTests(
+        self::assertClassesHaveTests(
             __DIR__ . '/../../src',
             'Localheinz\\FactoryGirl\\Definition\\',
-            'Localheinz\\FactoryGirl\\Definition\\Test\\Unit'
+            'Localheinz\\FactoryGirl\\Definition\\Test\\Unit\\'
         );
     }
 }

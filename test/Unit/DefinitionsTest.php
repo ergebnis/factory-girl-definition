@@ -25,6 +25,11 @@ use PHPUnit\Framework;
 
 /**
  * @internal
+ *
+ * @covers \Localheinz\FactoryGirl\Definition\Definitions
+ *
+ * @uses \Localheinz\FactoryGirl\Definition\Exception\InvalidDefinition
+ * @uses \Localheinz\FactoryGirl\Definition\Exception\InvalidDirectory
  */
 final class DefinitionsTest extends Framework\TestCase
 {
@@ -105,7 +110,7 @@ final class DefinitionsTest extends Framework\TestCase
 
         $definitions = $property->getValue($definitions);
 
-        self::assertInternalType('array', $definitions);
+        self::assertIsArray($definitions);
 
         $fakerAwareDefinitions = \array_filter($definitions, static function (Definition $definition) {
             return $definition instanceof FakerAwareDefinition;

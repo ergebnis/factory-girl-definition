@@ -19,6 +19,8 @@ use PHPUnit\Framework;
 
 /**
  * @internal
+ *
+ * @covers \Localheinz\FactoryGirl\Definition\Exception\InvalidDefinition
  */
 final class InvalidDefinitionTest extends Framework\TestCase
 {
@@ -26,12 +28,12 @@ final class InvalidDefinitionTest extends Framework\TestCase
 
     public function testExtendsRuntimeException(): void
     {
-        $this->assertClassExtends(\RuntimeException::class, Exception\InvalidDefinition::class);
+        self::assertClassExtends(\RuntimeException::class, Exception\InvalidDefinition::class);
     }
 
     public function testFromClassNameCreatesException(): void
     {
-        $className = $this->faker()->word;
+        $className = self::faker()->word;
         $previousException = new \Exception();
 
         $exception = Exception\InvalidDefinition::fromClassNameAndException(
