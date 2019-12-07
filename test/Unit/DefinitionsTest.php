@@ -13,6 +13,7 @@ declare(strict_types=1);
 
 namespace Localheinz\FactoryGirl\Definition\Test\Unit;
 
+use Ergebnis\Test\Util\Helper;
 use FactoryGirl\Provider\Doctrine\FixtureFactory;
 use Faker\Generator;
 use Localheinz\FactoryGirl\Definition\Definition;
@@ -20,7 +21,6 @@ use Localheinz\FactoryGirl\Definition\Definitions;
 use Localheinz\FactoryGirl\Definition\Exception;
 use Localheinz\FactoryGirl\Definition\FakerAwareDefinition;
 use Localheinz\FactoryGirl\Definition\Test\Fixture;
-use Localheinz\Test\Util\Helper;
 use PHPUnit\Framework;
 
 /**

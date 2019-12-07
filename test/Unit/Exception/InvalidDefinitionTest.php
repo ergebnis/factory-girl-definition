@@ -13,8 +13,8 @@ declare(strict_types=1);
 
 namespace Localheinz\FactoryGirl\Definition\Test\Unit\Exception;
 
+use Ergebnis\Test\Util\Helper;
 use Localheinz\FactoryGirl\Definition\Exception;
-use Localheinz\Test\Util\Helper;
 use PHPUnit\Framework;
 
 /**

@@ -13,11 +13,11 @@ declare(strict_types=1);
 
 namespace Localheinz\FactoryGirl\Definition\Test\Unit;
 
+use Ergebnis\Test\Util\Helper;
 use Faker\Generator;
 use Localheinz\FactoryGirl\Definition\AbstractDefinition;
 use Localheinz\FactoryGirl\Definition\FakerAwareDefinition;
 use Localheinz\FactoryGirl\Definition\Test\Fixture;
-use Localheinz\Test\Util\Helper;
 use PHPUnit\Framework;
 
 /**

@@ -13,9 +13,9 @@ declare(strict_types=1);
 
 namespace Localheinz\FactoryGirl\Definition\Test\Unit;
 
+use Ergebnis\Test\Util\Helper;
 use Localheinz\FactoryGirl\Definition\Definition;
 use Localheinz\FactoryGirl\Definition\FakerAwareDefinition;
-use Localheinz\Test\Util\Helper;
 use PHPUnit\Framework;
 
 /**
