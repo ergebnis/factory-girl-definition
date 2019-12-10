@@ -8,6 +8,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 For a full diff see [`1.3.0...master`][1.3.0...master]
 
+### Fixed
+
+* Required `fzaninotto/faker` ([#69]), by [@localheinz]
+
 ## [`1.3.0`][1.3.0]
 
 For a full diff see [`1.2.0...1.3.0`][1.2.0...1.3.0].
@@ -68,5 +72,6 @@ For a full diff see [`740095e...0.1.0`][740095e...0.1.0].
 [#1]: https://github.com/localheinz/factory-girl-definition/pull/1
 [#3]: https://github.com/localheinz/factory-girl-definition/pull/3
 [#4]: https://github.com/localheinz/factory-girl-definition/pull/4
+[#69]: https://github.com/localheinz/factory-girl-definition/pull/69
 
 [@localheinz]: https://github.com/localheinz
