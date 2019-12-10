@@ -17,5 +17,5 @@ use Faker\Generator;
 
 interface FakerAwareDefinition extends Definition
 {
-    public function provideWith(Generator $faker);
+    public function provideWith(Generator $faker): void;
 }

@@ -17,5 +17,5 @@ use FactoryGirl\Provider\Doctrine\FixtureFactory;
 
 interface Definition
 {
-    public function accept(FixtureFactory $fixtureFactory);
+    public function accept(FixtureFactory $fixtureFactory): void;
 }
