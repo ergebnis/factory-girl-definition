@@ -1,9 +1,9 @@
 # factory-girl-definition
 
-[![Continuous Integration](https://github.com/localheinz/factory-girl-definition/workflows/Continuous%20Integration/badge.svg)](https://github.com/localheinz/factory-girl-definition/actions)
-[![Code Coverage](https://codecov.io/gh/localheinz/factory-girl-definition/branch/master/graph/badge.svg)](https://codecov.io/gh/localheinz/factory-girl-definition)
-[![Latest Stable Version](https://poser.pugx.org/localheinz/factory-girl-definition/v/stable)](https://packagist.org/packages/localheinz/factory-girl-definition)
-[![Total Downloads](https://poser.pugx.org/localheinz/factory-girl-definition/downloads)](https://packagist.org/packages/localheinz/factory-girl-definition)
+[![Continuous Integration](https://github.com/ergebnis/factory-girl-definition/workflows/Continuous%20Integration/badge.svg)](https://github.com/ergebnis/factory-girl-definition/actions)
+[![Code Coverage](https://codecov.io/gh/ergebnis/factory-girl-definition/branch/master/graph/badge.svg)](https://codecov.io/gh/ergebnis/factory-girl-definition)
+[![Latest Stable Version](https://poser.pugx.org/ergebnis/factory-girl-definition/v/stable)](https://packagist.org/packages/ergebnis/factory-girl-definition)
+[![Total Downloads](https://poser.pugx.org/ergebnis/factory-girl-definition/downloads)](https://packagist.org/packages/ergebnis/factory-girl-definition)
 
 Provides an interface for, and an easy way to find and register entity definitions for [`breerly/factory-girl-php`](https://github.com/breerly/factory-girl-php).
 
@@ -12,7 +12,7 @@ Provides an interface for, and an easy way to find and register entity definitio
 Run
 
 ```
-$ composer require --dev localheinz/factory-girl-definition
+$ composer require --dev ergebnis/factory-girl-definition
 ```
 
 ## Usage
@@ -21,8 +21,8 @@ $ composer require --dev localheinz/factory-girl-definition
 
 Implement one of the
 
-* `Localheinz\FactoryGirl\Definition\Definition`
-* `Localheinz\FactoryGirl\Definition\FakerAwareDefinition`
+* `Ergebnis\FactoryGirl\Definition\Definition`
+* `Ergebnis\FactoryGirl\Definition\FakerAwareDefinition`
 
 interfaces and use the instance of `FactoryGirl\Provider\Doctrine\FixtureFactory`
 that is passed into `accept()` to define entities:
@@ -32,9 +32,9 @@ that is passed into `accept()` to define entities:
 
 namespace Foo\Bar\Test\Fixture\Entity;
 
+use Ergebnis\FactoryGirl\Definition\Definition;
 use FactoryGirl\Provider\Doctrine\FixtureFactory;
 use Foo\Bar\Entity;
-use Localheinz\FactoryGirl\Definition\Definition;
 
 final class UserDefinition implements Definition
 {
@@ -63,9 +63,9 @@ fixture factory, and optionally provide definitions with an instance of
 namespace Foo\Bar\Test\Integration;
 
 use Doctrine\ORM;
+use Ergebnis\FactoryGirl\Definition\Definitions;
 use FactoryGirl\Provider\Doctrine\FixtureFactory;
 use Faker\Generator;
-use Localheinz\FactoryGirl\Definition\Definitions;
 use PHPUnit\Framework;
 
 abstract class AbstractIntegrationTestCase extends Framework\TestCase

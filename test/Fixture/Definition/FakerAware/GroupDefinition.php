@@ -8,15 +8,15 @@ declare(strict_types=1);
  * For the full copyright and license information, please view
  * the LICENSE file that was distributed with this source code.
  *
- * @link https://github.com/localheinz/factory-girl-definition
+ * @link https://github.com/ergebnis/factory-girl-definition
  */
 
-namespace Localheinz\FactoryGirl\Definition\Test\Fixture\Definition\FakerAware;
+namespace Ergebnis\FactoryGirl\Definition\Test\Fixture\Definition\FakerAware;
 
+use Ergebnis\FactoryGirl\Definition\FakerAwareDefinition;
+use Ergebnis\FactoryGirl\Definition\Test\Fixture\Entity;
 use FactoryGirl\Provider\Doctrine\FixtureFactory;
 use Faker\Generator;
-use Localheinz\FactoryGirl\Definition\FakerAwareDefinition;
-use Localheinz\FactoryGirl\Definition\Test\Fixture\Entity;
 
 final class GroupDefinition implements FakerAwareDefinition
 {

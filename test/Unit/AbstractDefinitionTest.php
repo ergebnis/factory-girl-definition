@@ -8,22 +8,22 @@ declare(strict_types=1);
  * For the full copyright and license information, please view
  * the LICENSE file that was distributed with this source code.
  *
- * @link https://github.com/localheinz/factory-girl-definition
+ * @link https://github.com/ergebnis/factory-girl-definition
  */
 
-namespace Localheinz\FactoryGirl\Definition\Test\Unit;
+namespace Ergebnis\FactoryGirl\Definition\Test\Unit;
 
+use Ergebnis\FactoryGirl\Definition\AbstractDefinition;
+use Ergebnis\FactoryGirl\Definition\FakerAwareDefinition;
+use Ergebnis\FactoryGirl\Definition\Test\Fixture;
 use Ergebnis\Test\Util\Helper;
 use Faker\Generator;
-use Localheinz\FactoryGirl\Definition\AbstractDefinition;
-use Localheinz\FactoryGirl\Definition\FakerAwareDefinition;
-use Localheinz\FactoryGirl\Definition\Test\Fixture;
 use PHPUnit\Framework;
 
 /**
  * @internal
  *
- * @covers \Localheinz\FactoryGirl\Definition\AbstractDefinition
+ * @covers \Ergebnis\FactoryGirl\Definition\AbstractDefinition
  */
 final class AbstractDefinitionTest extends Framework\TestCase
 {

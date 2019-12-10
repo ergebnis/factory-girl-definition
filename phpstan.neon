@@ -4,8 +4,8 @@ includes:
 parameters:
 	ergebnis:
 		classesAllowedToBeExtended:
+			- Ergebnis\FactoryGirl\Definition\AbstractDefinition
 			- InvalidArgumentException
-			- Localheinz\FactoryGirl\Definition\AbstractDefinition
 			- RuntimeException
 	inferPrivatePropertyTypeFromConstructor: true
 	level: max
