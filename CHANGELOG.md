@@ -10,7 +10,7 @@ For a full diff see [`1.3.0...master`][1.3.0...master]
 
 ### Fixed
 
-* Required `fzaninotto/faker` ([#69]), by [@localheinz]
+* Required `breerly/factory-girl-php` and `fzaninotto/faker` ([#69]), by [@localheinz]
 
 ## [`1.3.0`][1.3.0]
 
