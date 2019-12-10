@@ -1,10 +1,5 @@
 includes:
-	- vendor/ergebnis/phpstan-rules/rules.neon
-	- vendor/jangregor/phpstan-prophecy/src/extension.neon
-	- vendor/phpstan/phpstan-deprecation-rules/rules.neon
-	- vendor/phpstan/phpstan-strict-rules/rules.neon
-	- vendor/phpstan/phpstan/conf/bleedingEdge.neon
-	- vendor/phpstan/phpstan/conf/config.levelmax.neon
+	- phpstan-baseline.neon
 
 parameters:
 	ergebnis:
@@ -12,10 +7,8 @@ parameters:
 			- InvalidArgumentException
 			- Localheinz\FactoryGirl\Definition\AbstractDefinition
 			- RuntimeException
-	ignoreErrors:
-		- '#Method Localheinz\\FactoryGirl\\Definition\\Definition::accept\(\) has no return typehint specified\.#'
-		- '#Method Localheinz\\FactoryGirl\\Definition\\FakerAwareDefinition::provideWith\(\) has no return typehint specified\.#'
 	inferPrivatePropertyTypeFromConstructor: true
+	level: max
 	paths:
 		- src
 		- test
