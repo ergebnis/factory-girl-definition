@@ -13,9 +13,9 @@ declare(strict_types=1);
 
 namespace Localheinz\FactoryGirl\Definition;
 
+use Ergebnis\Classy;
 use FactoryGirl\Provider\Doctrine\FixtureFactory;
 use Faker\Generator;
-use Localheinz\Classy;
 
 final class Definitions
 {
