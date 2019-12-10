@@ -1,27 +1,107 @@
-# php-library-template
+# factory-girl-definition
 
-[![Continuous Integration](https://github.com/localheinz/php-library-template/workflows/Continuous%20Integration/badge.svg)](https://github.com/localheinz/php-library-template/actions)
-[![codecov](https://codecov.io/gh/localheinz/php-library-template/branch/master/graph/badge.svg)](https://codecov.io/gh/localheinz/php-library-template)
-[![Latest Stable Version](https://poser.pugx.org/localheinz/php-library-template/v/stable)](https://packagist.org/packages/localheinz/php-library-template)
-[![Total Downloads](https://poser.pugx.org/localheinz/php-library-template/downloads)](https://packagist.org/packages/localheinz/php-library-template)
+[![Continuous Integration](https://github.com/localheinz/factory-girl-definition/workflows/Continuous%20Integration/badge.svg)](https://github.com/localheinz/factory-girl-definition/actions)
+[![Code Coverage](https://codecov.io/gh/localheinz/factory-girl-definition/branch/master/graph/badge.svg)](https://codecov.io/gh/localheinz/factory-girl-definition)
+[![Latest Stable Version](https://poser.pugx.org/localheinz/factory-girl-definition/v/stable)](https://packagist.org/packages/localheinz/factory-girl-definition)
+[![Total Downloads](https://poser.pugx.org/localheinz/factory-girl-definition/downloads)](https://packagist.org/packages/localheinz/factory-girl-definition)
+
+Provides an interface for, and an easy way to find and register entity definitions for [`breerly/factory-girl-php`](https://github.com/breerly/factory-girl-php).
 
 ## Installation
-
-:bulb: This is a great place for showing how to install the package, see below:
 
 Run
 
 ```
-$ composer require localheinz/php-library-template
+$ composer require --dev localheinz/factory-girl-definition
 ```
 
 ## Usage
 
-:bulb: This is a great place for showing a few usage examples!
+### Create Definitions
 
-## Changelog
+Implement one of the
 
-Please have a look at [`CHANGELOG.md`](CHANGELOG.md).
+* `Localheinz\FactoryGirl\Definition\Definition`
+* `Localheinz\FactoryGirl\Definition\FakerAwareDefinition`
+
+interfaces and use the instance of `FactoryGirl\Provider\Doctrine\FixtureFactory`
+that is passed into `accept()` to define entities:
+
+```php
+<?php
+
+namespace Foo\Bar\Test\Fixture\Entity;
+
+use FactoryGirl\Provider\Doctrine\FixtureFactory;
+use Foo\Bar\Entity;
+use Localheinz\FactoryGirl\Definition\Definition;
+
+final class UserDefinition implements Definition
+{
+    public function accept(FixtureFactory $fixtureFactory)
+    {
+        $fixtureFactory->defineEntity(Entity\User::class, [
+            // ...
+        ]);
+    }
+}
+```
+
+:bulb: Any number of entities can be defined within a definition.
+However, it's probably a good idea to create a definition for each entity.
+
+### Register Definitions
+
+Lazily instantiate an instance of `FactoryGirl\Provider\Doctrine\FixtureFactory`
+and use `Definitions` to find definitions, register definitions with the
+fixture factory, and optionally provide definitions with an instance of
+`Faker\Generator`:
+
+```php
+<?php
+
+namespace Foo\Bar\Test\Integration;
+
+use Doctrine\ORM;
+use FactoryGirl\Provider\Doctrine\FixtureFactory;
+use Faker\Generator;
+use Localheinz\FactoryGirl\Definition\Definitions;
+use PHPUnit\Framework;
+
+abstract class AbstractIntegrationTestCase extends Framework\TestCase
+{
+    /**
+     * @var FixtureFactory
+     */
+    private $fixtureFactory;
+
+    final protected function entityManager(): ORM\EntityManager
+    {
+        // ...
+    }
+
+    final protected function faker(): Generator
+    {
+        // ...
+    }
+
+    final protected function fixtureFactory(): FixtureFactory
+    {
+        if (null === $this->fixtureFactory) {
+            $fixtureFactory = new FixtureFactory($this->entityManager());
+            $fixtureFactory->persistOnGet(true);
+
+            Definitions::in(__DIR__ . '/../Fixture')
+                ->registerWith($fixtureFactory)
+                ->provideWith($this->faker());
+
+            $this->fixtureFactory = $fixtureFactory;
+        }
+
+        return $this->fixtureFactory;
+    }
+}
+```
 
 ## Contributing
 
