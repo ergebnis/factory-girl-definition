@@ -1,8 +1,8 @@
 {
-  "name": "localheinz/factory-girl-definition",
+  "name": "ergebnis/factory-girl-definition",
   "type": "library",
   "description": "Provides an interface for, and an easy way to find and register entity definitions for breerly/factory-girl-php.",
-  "homepage": "https://github.com/localheinz/factory-girl-definition",
+  "homepage": "https://github.com/ergebnis/factory-girl-definition",
   "license": "MIT",
   "authors": [
     {
@@ -15,6 +15,9 @@
     "breerly/factory-girl-php": "^1.0.3",
     "ergebnis/classy": "~0.5.0",
     "fzaninotto/faker": "^1.9.0"
+  },
+  "replace": {
+    "localheinz/factory-girl-definition": "*"
   },
   "require-dev": {
     "ergebnis/php-cs-fixer-config": "~1.0.0",
@@ -38,16 +41,16 @@
   },
   "autoload": {
     "psr-4": {
-      "Localheinz\\FactoryGirl\\Definition\\": "src"
+      "Ergebnis\\FactoryGirl\\Definition\\": "src"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Localheinz\\FactoryGirl\\Definition\\Test\\": "test"
+      "Ergebnis\\FactoryGirl\\Definition\\Test\\": "test"
     }
   },
   "support": {
-    "issues": "https://github.com/localheinz/factory-girl-definition/issues",
-    "source": "https://github.com/localheinz/factory-girl-definition"
+    "issues": "https://github.com/ergebnis/factory-girl-definition/issues",
+    "source": "https://github.com/ergebnis/factory-girl-definition"
   }
 }

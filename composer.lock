@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6ab83cacfd2f3ad57d039d977b4b6407",
+    "content-hash": "17f6c48b09d5ff26f73918ef43ca06a1",
     "packages": [
         {
             "name": "breerly/factory-girl-php",

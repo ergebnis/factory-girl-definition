@@ -8,10 +8,10 @@ declare(strict_types=1);
  * For the full copyright and license information, please view
  * the LICENSE file that was distributed with this source code.
  *
- * @link https://github.com/localheinz/factory-girl-definition
+ * @link https://github.com/ergebnis/factory-girl-definition
  */
 
-namespace Localheinz\FactoryGirl\Definition\Test\AutoReview;
+namespace Ergebnis\FactoryGirl\Definition\Test\AutoReview;
 
 use Ergebnis\Test\Util\Helper;
 use PHPUnit\Framework;
@@ -29,8 +29,8 @@ final class SrcCodeTest extends Framework\TestCase
     {
         self::assertClassesHaveTests(
             __DIR__ . '/../../src',
-            'Localheinz\\FactoryGirl\\Definition\\',
-            'Localheinz\\FactoryGirl\\Definition\\Test\\Unit\\'
+            'Ergebnis\\FactoryGirl\\Definition\\',
+            'Ergebnis\\FactoryGirl\\Definition\\Test\\Unit\\'
         );
     }
 }

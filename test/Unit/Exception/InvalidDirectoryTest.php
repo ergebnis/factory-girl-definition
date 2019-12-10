@@ -8,19 +8,19 @@ declare(strict_types=1);
  * For the full copyright and license information, please view
  * the LICENSE file that was distributed with this source code.
  *
- * @link https://github.com/localheinz/factory-girl-definition
+ * @link https://github.com/ergebnis/factory-girl-definition
  */
 
-namespace Localheinz\FactoryGirl\Definition\Test\Unit\Exception;
+namespace Ergebnis\FactoryGirl\Definition\Test\Unit\Exception;
 
+use Ergebnis\FactoryGirl\Definition\Exception;
 use Ergebnis\Test\Util\Helper;
-use Localheinz\FactoryGirl\Definition\Exception;
 use PHPUnit\Framework;
 
 /**
  * @internal
  *
- * @covers \Localheinz\FactoryGirl\Definition\Exception\InvalidDirectory
+ * @covers \Ergebnis\FactoryGirl\Definition\Exception\InvalidDirectory
  */
 final class InvalidDirectoryTest extends Framework\TestCase
 {

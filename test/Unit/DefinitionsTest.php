@@ -8,28 +8,28 @@ declare(strict_types=1);
  * For the full copyright and license information, please view
  * the LICENSE file that was distributed with this source code.
  *
- * @link https://github.com/localheinz/factory-girl-definition
+ * @link https://github.com/ergebnis/factory-girl-definition
  */
 
-namespace Localheinz\FactoryGirl\Definition\Test\Unit;
+namespace Ergebnis\FactoryGirl\Definition\Test\Unit;
 
+use Ergebnis\FactoryGirl\Definition\Definition;
+use Ergebnis\FactoryGirl\Definition\Definitions;
+use Ergebnis\FactoryGirl\Definition\Exception;
+use Ergebnis\FactoryGirl\Definition\FakerAwareDefinition;
+use Ergebnis\FactoryGirl\Definition\Test\Fixture;
 use Ergebnis\Test\Util\Helper;
 use FactoryGirl\Provider\Doctrine\FixtureFactory;
 use Faker\Generator;
-use Localheinz\FactoryGirl\Definition\Definition;
-use Localheinz\FactoryGirl\Definition\Definitions;
-use Localheinz\FactoryGirl\Definition\Exception;
-use Localheinz\FactoryGirl\Definition\FakerAwareDefinition;
-use Localheinz\FactoryGirl\Definition\Test\Fixture;
 use PHPUnit\Framework;
 
 /**
  * @internal
  *
- * @covers \Localheinz\FactoryGirl\Definition\Definitions
+ * @covers \Ergebnis\FactoryGirl\Definition\Definitions
  *
- * @uses \Localheinz\FactoryGirl\Definition\Exception\InvalidDefinition
- * @uses \Localheinz\FactoryGirl\Definition\Exception\InvalidDirectory
+ * @uses \Ergebnis\FactoryGirl\Definition\Exception\InvalidDefinition
+ * @uses \Ergebnis\FactoryGirl\Definition\Exception\InvalidDirectory
  */
 final class DefinitionsTest extends Framework\TestCase
 {

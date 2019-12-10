@@ -8,13 +8,13 @@ declare(strict_types=1);
  * For the full copyright and license information, please view
  * the LICENSE file that was distributed with this source code.
  *
- * @link https://github.com/localheinz/factory-girl-definition
+ * @link https://github.com/ergebnis/factory-girl-definition
  */
 
-namespace Localheinz\FactoryGirl\Definition\Test\Fixture\Definition\DoesNotImplementInterface;
+namespace Ergebnis\FactoryGirl\Definition\Test\Fixture\Definition\DoesNotImplementInterface;
 
+use Ergebnis\FactoryGirl\Definition\Test\Fixture\Entity;
 use FactoryGirl\Provider\Doctrine\FixtureFactory;
-use Localheinz\FactoryGirl\Definition\Test\Fixture\Entity;
 
 /**
  * Is not acceptable as it does not implement the DefinitionInterface.
