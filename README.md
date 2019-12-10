@@ -38,7 +38,7 @@ use Foo\Bar\Entity;
 
 final class UserDefinition implements Definition
 {
-    public function accept(FixtureFactory $fixtureFactory)
+    public function accept(FixtureFactory $fixtureFactory): void
     {
         $fixtureFactory->defineEntity(Entity\User::class, [
             // ...
