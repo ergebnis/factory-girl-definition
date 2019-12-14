@@ -16,9 +16,6 @@
     "ergebnis/classy": "~0.5.0",
     "fzaninotto/faker": "^1.9.0"
   },
-  "replace": {
-    "localheinz/factory-girl-definition": "*"
-  },
   "require-dev": {
     "ergebnis/php-cs-fixer-config": "~1.0.0",
     "ergebnis/phpstan-rules": "~0.14.0",

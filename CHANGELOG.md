@@ -6,7 +6,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased
 
-For a full diff see [`2.0.0...master`][2.0.0...master]
+For a full diff see [`2.0.1...master`][2.0.1...master]
+
+## [`2.0.1`][2.0.1]
+
+For a full diff see [`2.0.0...2.0.1`][2.0.0...2.0.1].
+
+### Fixed
+
+* Removed an inappropriate `replace` configuration from `composer.json` ([#76]), by [@localheinz]
 
 ## [`2.0.0`][2.0.0]
 
@@ -99,6 +107,7 @@ For a full diff see [`740095e...0.1.0`][740095e...0.1.0].
 [1.2.0]: https://github.com/ergebnis/factory-girl-definition/tag/1.2.0
 [1.3.0]: https://github.com/ergebnis/factory-girl-definition/tag/1.3.0
 [2.0.0]: https://github.com/ergebnis/factory-girl-definition/tag/2.0.0
+[2.0.1]: https://github.com/ergebnis/factory-girl-definition/tag/2.0.1
 
 [740095e...0.1.0]: https://github.com/ergebnis/factory-girl-definition/compare/740095e...0.1.0
 [0.1.0...0.1.1]: https://github.com/ergebnis/factory-girl-definition/compare/0.1.0...0.1.1
@@ -108,7 +117,8 @@ For a full diff see [`740095e...0.1.0`][740095e...0.1.0].
 [1.1.0...1.2.0]: https://github.com/ergebnis/factory-girl-definition/compare/1.1.0...1.2.0
 [1.2.0...1.3.0]: https://github.com/ergebnis/factory-girl-definition/compare/1.1.0...1.3.0
 [1.3.0...2.0.0]: https://github.com/ergebnis/factory-girl-definition/compare/1.3.0...2.0.0
-[2.0.0...master]: https://github.com/ergebnis/factory-girl-definition/compare/2.0.0...master
+[2.0.0...2.0.1]: https://github.com/ergebnis/factory-girl-definition/compare/2.0.0...2.0.1
+[2.0.1...master]: https://github.com/ergebnis/factory-girl-definition/compare/2.0.1...master
 
 [#1]: https://github.com/ergebnis/factory-girl-definition/pull/1
 [#3]: https://github.com/ergebnis/factory-girl-definition/pull/3
@@ -116,6 +126,7 @@ For a full diff see [`740095e...0.1.0`][740095e...0.1.0].
 [#69]: https://github.com/ergebnis/factory-girl-definition/pull/69
 [#71]: https://github.com/ergebnis/factory-girl-definition/pull/71
 [#73]: https://github.com/ergebnis/factory-girl-definition/pull/73
+[#76]: https://github.com/ergebnis/factory-girl-definition/pull/76
 
 [@ergebnis]: https://github.com/ergebnis
 [@localheinz]: https://github.com/localheinz
