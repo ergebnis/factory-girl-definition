@@ -112,7 +112,7 @@ final class DefinitionsTest extends Framework\TestCase
 
         self::assertIsArray($definitions);
 
-        $fakerAwareDefinitions = \array_filter($definitions, static function (Definition $definition) {
+        $fakerAwareDefinitions = \array_filter($definitions, static function (Definition $definition): bool {
             return $definition instanceof FakerAwareDefinition;
         });
 
