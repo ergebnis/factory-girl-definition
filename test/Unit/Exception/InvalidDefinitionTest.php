@@ -26,11 +26,6 @@ final class InvalidDefinitionTest extends Framework\TestCase
 {
     use Helper;
 
-    public function testExtendsRuntimeException(): void
-    {
-        self::assertClassExtends(\RuntimeException::class, Exception\InvalidDefinition::class);
-    }
-
     public function testFromClassNameCreatesException(): void
     {
         $className = self::faker()->word;
@@ -40,8 +35,6 @@ final class InvalidDefinitionTest extends Framework\TestCase
             $className,
             $previousException
         );
-
-        self::assertInstanceOf(Exception\InvalidDefinition::class, $exception);
 
         $message = \sprintf(
             'An exception was thrown while trying to instantiate definition "%s".',

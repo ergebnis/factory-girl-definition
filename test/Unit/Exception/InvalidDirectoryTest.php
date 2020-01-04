@@ -26,18 +26,11 @@ final class InvalidDirectoryTest extends Framework\TestCase
 {
     use Helper;
 
-    public function testExtendsInvalidArgumentException(): void
-    {
-        self::assertClassExtends(\InvalidArgumentException::class, Exception\InvalidDirectory::class);
-    }
-
     public function testNotDirectoryCreatesException(): void
     {
         $directory = self::faker()->word;
 
         $exception = Exception\InvalidDirectory::notDirectory($directory);
-
-        self::assertInstanceOf(Exception\InvalidDirectory::class, $exception);
 
         $message = \sprintf(
             'Directory should be a directory, but "%s" is not.',

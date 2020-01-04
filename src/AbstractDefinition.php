@@ -18,7 +18,7 @@ use Faker\Generator;
 abstract class AbstractDefinition implements FakerAwareDefinition
 {
     /**
-     * @var Generator
+     * @var null|Generator
      */
     private $faker;
 
