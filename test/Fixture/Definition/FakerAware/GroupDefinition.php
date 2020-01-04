@@ -21,7 +21,7 @@ use Faker\Generator;
 final class GroupDefinition implements FakerAwareDefinition
 {
     /**
-     * @var Generator
+     * @var null|Generator
      */
     private $faker;
 
@@ -37,6 +37,13 @@ final class GroupDefinition implements FakerAwareDefinition
 
     public function faker(): Generator
     {
+        if (null === $this->faker) {
+            throw new \RuntimeException(\sprintf(
+                'An instance of "%s" has not been provided yet.',
+                Generator::class
+            ));
+        }
+
         return $this->faker;
     }
 }

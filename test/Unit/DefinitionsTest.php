@@ -90,8 +90,6 @@ final class DefinitionsTest extends Framework\TestCase
     {
         $definitions = Definitions::in(__DIR__ . '/../Fixture/Definition/Acceptable');
 
-        self::assertInstanceOf(Definitions::class, $definitions);
-
         self::assertSame($definitions, $definitions->registerWith($this->prophesize(FixtureFactory::class)->reveal()));
         self::assertSame($definitions, $definitions->provideWith($this->prophesize(Generator::class)->reveal()));
     }
@@ -119,7 +117,6 @@ final class DefinitionsTest extends Framework\TestCase
         self::assertCount(1, $fakerAwareDefinitions);
         self::assertContainsOnlyInstancesOf(FakerAwareDefinition::class, $fakerAwareDefinitions);
 
-        /** @var Fixture\Definition\FakerAware\GroupDefinition $fakerAwareDefinition */
         $fakerAwareDefinition = \array_shift($fakerAwareDefinitions);
 
         self::assertInstanceOf(Fixture\Definition\FakerAware\GroupDefinition::class, $fakerAwareDefinition);
