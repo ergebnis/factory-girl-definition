@@ -14,7 +14,7 @@
     "php": "^7.2",
     "breerly/factory-girl-php": "^1.0.3",
     "ergebnis/classy": "~0.5.2",
-    "fzaninotto/faker": "^1.9.0"
+    "fzaninotto/faker": "^1.9.1"
   },
   "require-dev": {
     "ergebnis/composer-normalize": "^2.2.0",
