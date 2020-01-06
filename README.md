@@ -1,7 +1,9 @@
 # factory-girl-definition
 
+[![Continuous Deployment](https://github.com/ergebnis/factory-girl-definition/workflows/Continuous%20Deployment/badge.svg)](https://github.com/ergebnis/factory-girl-definition/actions)
 [![Continuous Integration](https://github.com/ergebnis/factory-girl-definition/workflows/Continuous%20Integration/badge.svg)](https://github.com/ergebnis/factory-girl-definition/actions)
 [![Code Coverage](https://codecov.io/gh/ergebnis/factory-girl-definition/branch/master/graph/badge.svg)](https://codecov.io/gh/ergebnis/factory-girl-definition)
+[![Type Coverage](https://shepherd.dev/github/ergebnis/factory-girl-definition/coverage.svg)](https://shepherd.dev/github/ergebnis/factory-girl-definition)
 [![Latest Stable Version](https://poser.pugx.org/ergebnis/factory-girl-definition/v/stable)](https://packagist.org/packages/ergebnis/factory-girl-definition)
 [![Total Downloads](https://poser.pugx.org/ergebnis/factory-girl-definition/downloads)](https://packagist.org/packages/ergebnis/factory-girl-definition)
 
