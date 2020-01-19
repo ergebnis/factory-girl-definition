@@ -72,7 +72,9 @@ repository:
   allow_merge_commit: true
   allow_rebase_merge: false
   allow_squash_merge: false
+  archived: false
   default_branch: "master"
+  delete_branch_on_merge: true
   description: ":girl: Provides an interface for, and an easy way to find and register entity definitions for breerly/factory-girl-php."
   has_downloads: true
   has_issues: true
