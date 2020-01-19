@@ -3,26 +3,30 @@
 declare(strict_types=1);
 
 /**
- * Copyright (c) 2017 Andreas Möller
+ * Copyright (c) 2017-2020 Andreas Möller
  *
  * For the full copyright and license information, please view
- * the LICENSE file that was distributed with this source code.
+ * the LICENSE.md file that was distributed with this source code.
  *
- * @link https://github.com/ergebnis/factory-girl-definition
+ * @see https://github.com/ergebnis/factory-girl-definition
  */
 
+use Ergebnis\License;
 use Ergebnis\PhpCsFixer\Config;
 
-$header = <<<'EOF'
-Copyright (c) 2017 Andreas Möller
+$license = License\Type\MIT::markdown(
+    __DIR__ . '/LICENSE.md',
+    License\Range::since(
+        License\Year::fromString('2017'),
+        new \DateTimeZone('UTC')
+    ),
+    License\Holder::fromString('Andreas Möller'),
+    License\Url::fromString('https://github.com/ergebnis/factory-girl-definition')
+);
 
-For the full copyright and license information, please view
-the LICENSE file that was distributed with this source code.
+$license->save();
 
-@link https://github.com/ergebnis/factory-girl-definition
-EOF;
-
-$config = Config\Factory::fromRuleSet(new Config\RuleSet\Php71($header));
+$config = Config\Factory::fromRuleSet(new Config\RuleSet\Php71($license->header()));
 
 $config->getFinder()
     ->ignoreDotFiles(false)
