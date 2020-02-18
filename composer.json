@@ -30,7 +30,7 @@
     "phpstan/phpstan-strict-rules": "~0.12.2",
     "phpunit/phpunit": "^8.5.2",
     "psalm/plugin-phpunit": "~0.8.1",
-    "vimeo/psalm": "^3.8.5"
+    "vimeo/psalm": "^3.9.0"
   },
   "suggest": {
     "breerly/factory-girl-php": "For creating a fixture factory the definitions can be used with."
