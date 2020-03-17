@@ -91,14 +91,14 @@ final class DefinitionsTest extends Framework\TestCase
         $definitions = Definitions::in(__DIR__ . '/../Fixture/Definition/Acceptable');
 
         self::assertSame($definitions, $definitions->registerWith($this->prophesize(FixtureFactory::class)->reveal()));
-        self::assertSame($definitions, $definitions->provideWith($this->prophesize(Generator::class)->reveal()));
+        self::assertSame($definitions, $definitions->provideWith(new Generator()));
     }
 
     public function testInAcceptsClassesWhichAreAcceptableAndFakerAwareAndProvidesThemWithFaker(): void
     {
-        $faker = $this->prophesize(Generator::class);
+        $faker = new Generator();
 
-        $definitions = Definitions::in(__DIR__ . '/../Fixture/Definition/FakerAware')->provideWith($faker->reveal());
+        $definitions = Definitions::in(__DIR__ . '/../Fixture/Definition/FakerAware')->provideWith($faker);
 
         $reflection = new \ReflectionClass(Definitions::class);
 
@@ -120,7 +120,7 @@ final class DefinitionsTest extends Framework\TestCase
         $fakerAwareDefinition = \array_shift($fakerAwareDefinitions);
 
         self::assertInstanceOf(Fixture\Definition\FakerAware\GroupDefinition::class, $fakerAwareDefinition);
-        self::assertSame($faker->reveal(), $fakerAwareDefinition->faker());
+        self::assertSame($faker, $fakerAwareDefinition->faker());
     }
 
     public function testThrowsInvalidDefinitionExceptionIfInstantiatingDefinitionsThrowsException(): void
