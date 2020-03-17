@@ -1,7 +1,9 @@
 # factory-girl-definition
 
-[![Continuous Deployment](https://github.com/ergebnis/factory-girl-definition/workflows/Continuous%20Deployment/badge.svg)](https://github.com/ergebnis/factory-girl-definition/actions)
-[![Continuous Integration](https://github.com/ergebnis/factory-girl-definition/workflows/Continuous%20Integration/badge.svg)](https://github.com/ergebnis/factory-girl-definition/actions)
+[![Integrate](https://github.com/ergebnis/factory-girl-definition/workflows/Integrate/badge.svg?branch=master)](https://github.com/ergebnis/factory-girl-definition/actions)
+[![Prune](https://github.com/ergebnis/factory-girl-definition/workflows/Prune/badge.svg?branch=master)](https://github.com/ergebnis/factory-girl-definition/actions)
+[![Release](https://github.com/ergebnis/factory-girl-definition/workflows/Release/badge.svg?branch=master)](https://github.com/ergebnis/factory-girl-definition/actions)
+[![Renew](https://github.com/ergebnis/factory-girl-definition/workflows/Renew/badge.svg?branch=master)](https://github.com/ergebnis/factory-girl-definition/actions)
 
 [![Code Coverage](https://codecov.io/gh/ergebnis/factory-girl-definition/branch/master/graph/badge.svg)](https://codecov.io/gh/ergebnis/factory-girl-definition)
 [![Type Coverage](https://shepherd.dev/github/ergebnis/factory-girl-definition/coverage.svg)](https://shepherd.dev/github/ergebnis/factory-girl-definition)
@@ -115,6 +117,6 @@ Please have a look at [`CONTRIBUTING.md`](.github/CONTRIBUTING.md).
 
 Please have a look at [`CODE_OF_CONDUCT.md`](https://github.com/ergebnis/.github/blob/master/CODE_OF_CONDUCT.md).
 
-## License
+This package is licensed using the MIT License.
 
-This package is licensed using the [MIT License](LICENSE.md).
+Please have a look at [`LICENSE.md`](LICENSE.md).

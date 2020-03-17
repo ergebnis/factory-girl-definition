@@ -1,2 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<files psalm-version="3.8.1@8e54e3aa060fc490d86d0e2abbf62750516d40fd"/>
+<files psalm-version="3.9.3@2e4154d76e24d1b4e59e6cc2bebef7790cb9e550">
+  <file src="test/Unit/DefinitionsTest.php">
+    <MixedAssignment occurrences="1">
+      <code>$definitions</code>
+    </MixedAssignment>
+  </file>
+</files>
