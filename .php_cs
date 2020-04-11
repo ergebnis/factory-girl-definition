@@ -35,6 +35,7 @@ $config->getFinder()
         '.build/',
         '.dependabot/',
         '.github/',
+        '.notes/',
         'test/Fixture/Definition/CanNotBeAutoloaded/',
     ])
     ->name('.php_cs');
