@@ -6,7 +6,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased
 
-For a full diff see [`2.0.1...master`][2.0.1...master]
+For a full diff see [`2.0.1...main`][2.0.1...main]
 
 ## [`2.0.1`][2.0.1]
 
@@ -118,7 +118,7 @@ For a full diff see [`740095e...0.1.0`][740095e...0.1.0].
 [1.2.0...1.3.0]: https://github.com/ergebnis/factory-girl-definition/compare/1.1.0...1.3.0
 [1.3.0...2.0.0]: https://github.com/ergebnis/factory-girl-definition/compare/1.3.0...2.0.0
 [2.0.0...2.0.1]: https://github.com/ergebnis/factory-girl-definition/compare/2.0.0...2.0.1
-[2.0.1...master]: https://github.com/ergebnis/factory-girl-definition/compare/2.0.1...master
+[2.0.1...main]: https://github.com/ergebnis/factory-girl-definition/compare/2.0.1...main
 
 [#1]: https://github.com/ergebnis/factory-girl-definition/pull/1
 [#3]: https://github.com/ergebnis/factory-girl-definition/pull/3
