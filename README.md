@@ -1,11 +1,11 @@
 # factory-girl-definition
 
-[![Integrate](https://github.com/ergebnis/factory-girl-definition/workflows/Integrate/badge.svg?branch=master)](https://github.com/ergebnis/factory-girl-definition/actions)
-[![Prune](https://github.com/ergebnis/factory-girl-definition/workflows/Prune/badge.svg?branch=master)](https://github.com/ergebnis/factory-girl-definition/actions)
-[![Release](https://github.com/ergebnis/factory-girl-definition/workflows/Release/badge.svg?branch=master)](https://github.com/ergebnis/factory-girl-definition/actions)
-[![Renew](https://github.com/ergebnis/factory-girl-definition/workflows/Renew/badge.svg?branch=master)](https://github.com/ergebnis/factory-girl-definition/actions)
+[![Integrate](https://github.com/ergebnis/factory-girl-definition/workflows/Integrate/badge.svg?branch=main)](https://github.com/ergebnis/factory-girl-definition/actions)
+[![Prune](https://github.com/ergebnis/factory-girl-definition/workflows/Prune/badge.svg?branch=main)](https://github.com/ergebnis/factory-girl-definition/actions)
+[![Release](https://github.com/ergebnis/factory-girl-definition/workflows/Release/badge.svg?branch=main)](https://github.com/ergebnis/factory-girl-definition/actions)
+[![Renew](https://github.com/ergebnis/factory-girl-definition/workflows/Renew/badge.svg?branch=main)](https://github.com/ergebnis/factory-girl-definition/actions)
 
-[![Code Coverage](https://codecov.io/gh/ergebnis/factory-girl-definition/branch/master/graph/badge.svg)](https://codecov.io/gh/ergebnis/factory-girl-definition)
+[![Code Coverage](https://codecov.io/gh/ergebnis/factory-girl-definition/branch/main/graph/badge.svg)](https://codecov.io/gh/ergebnis/factory-girl-definition)
 [![Type Coverage](https://shepherd.dev/github/ergebnis/factory-girl-definition/coverage.svg)](https://shepherd.dev/github/ergebnis/factory-girl-definition)
 
 [![Latest Stable Version](https://poser.pugx.org/ergebnis/factory-girl-definition/v/stable)](https://packagist.org/packages/ergebnis/factory-girl-definition)
@@ -115,7 +115,7 @@ Please have a look at [`CONTRIBUTING.md`](.github/CONTRIBUTING.md).
 
 ## Code of Conduct
 
-Please have a look at [`CODE_OF_CONDUCT.md`](https://github.com/ergebnis/.github/blob/master/CODE_OF_CONDUCT.md).
+Please have a look at [`CODE_OF_CONDUCT.md`](https://github.com/ergebnis/.github/blob/main/CODE_OF_CONDUCT.md).
 
 This package is licensed using the MIT License.
 
