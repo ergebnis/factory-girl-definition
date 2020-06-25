@@ -17,7 +17,7 @@ Provides an interface for, and an easy way to find and register entity definitio
 
 Run
 
-```
+```sh
 $ composer require --dev ergebnis/factory-girl-definition
 ```
 
